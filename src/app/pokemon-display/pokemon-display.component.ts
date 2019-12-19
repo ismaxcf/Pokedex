@@ -8,6 +8,7 @@ import{PokemonService} from '../pokemon.service'
 export class PokemonDisplayComponent implements OnInit {
   pokemon : Object
   photoLink: String
+  pokemons: Array<Object>
   constructor(private pokemonService : PokemonService) { 
 
   }
@@ -19,6 +20,10 @@ export class PokemonDisplayComponent implements OnInit {
       console.log(this.pokemon)
       this.photoLink = this.pokemon['sprites'].front_default
     })
+    this.pokemonService.getpokemonname().subscribe(data=>{
+      this.pokemons=data['results'] 
+     })
+ 
   }
 
   ChangeSex(){

@@ -7,7 +7,11 @@ import { Observable } from 'rxjs';
 export class PokemonService {
 
   constructor(private httpClient:HttpClient) { }
+  getpokemonname():Observable<Object>{
 
+    return this.httpClient.get("https://pokeapi.co/api/v2/pokemon?limit=800")
+
+  }
   getPokemon(id:string):Observable<Object>{
     return this.httpClient.get("https://pokeapi.co/api/v2/pokemon/"+id)
   }
