@@ -1,0 +1,20 @@
+<div *ngIf="this.pokemon"class="pokemonDisplay">
+  <h2 class="pokemonDisplay__Name">{{this.pokemon.name}}</h2>
+
+  <div class="PokemonContainer">
+
+    <div class="PokemonPhotosContainer">
+        <img class="PokemonPhotosContainer__Sprite" src={{this.photoLink}} alt="">
+        <ul class="PokemonPhotosContainer__Menu">
+            <li class="PokemonPhotosContainer__Option" (click)="ChangeSex()">F/M</li>
+            <li class="PokemonPhotosContainer__Option"(click)="ChangePerspective()">Change perspective</li>
+            <li class="PokemonPhotosContainer__Option"(click)="ChangeShiny()">Shiny</li>
+        </ul>
+    </div>
+    <div class="PokemonDataContainer">
+
+    </div>
+
+  </div>
+  
+</div>
