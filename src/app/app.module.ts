@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
+import { PokemonDisplayComponent } from './pokemon-display/pokemon-display.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
  { path: 'list', component:ListComponent},
@@ -18,8 +20,11 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true })
+      { enableTracing: true }),
+      HttpClientModule,
+    PokemonDisplayComponent
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

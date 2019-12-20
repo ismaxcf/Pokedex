@@ -12,7 +12,7 @@ export class ListComponent implements OnInit {
   constructor(private PokemonService:PokemonService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.pokemons=this.PokemonService.getPokemon()
+    this.pokemons=this.PokemonService.getpokemonname()
     console.log(this.pokemons)
 
   }

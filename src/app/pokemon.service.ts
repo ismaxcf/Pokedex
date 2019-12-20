@@ -1,27 +1,18 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http' 
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class PokemonService {
-constructor() { }
-getPokemon() {
-let pokemonList=[
-    {name:'Pikachu'},
-    {name:'Raichu'},
-    {name:'Pichu'},
-    {name:'Ludicolo'},
-    {name:'Eevee'},
-    {name:'Entei'},
-    {name:'Charmander'},
-]
-console.log(pokemonList)
-return pokemonList
+
+  constructor(private httpClient:HttpClient) { }
+  getpokemonname():Observable<Object>{
+
+    return this.httpClient.get("https://pokeapi.co/api/v2/pokemon?limit=800")
+
+  }
+  getPokemon(id:string):Observable<Object>{
+    return this.httpClient.get("https://pokeapi.co/api/v2/pokemon/"+id)
+  }
 }
-  
-}
-  
-
-
-
-
