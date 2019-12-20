@@ -8,12 +8,12 @@ import {PokemonService} from '../pokemon.service'
 })
 export class ListComponent implements OnInit {
 
-  pokemons = undefined
-  
+  pokemons:Array<Object>
+
   constructor(private PokemonService:PokemonService) { }
 
   ngOnInit() {
-    this.pokemons = this.PokemonService.getPokemon()
+   this.PokemonService.getpokemonname().subscribe(data => {this.pokemons = data['results']})
   }
 
 }
