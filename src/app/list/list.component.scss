@@ -1,0 +1,75 @@
+.list{
+    background-image: url("https://i.pinimg.com/originals/df/4e/8b/df4e8ba28f912bf9cdf9fa0dfc196411.png");
+    width: 40%;
+    height: 900px;
+    background-color: lightgray;
+    font-family:  Calibri;
+    font-size: 20px;
+    border: 5px solid black;
+    border-radius: 10px; 
+    box-sizing: border-content;  
+    &--box{
+        height: 83%;
+        overflow: auto;
+        &--item{
+            display: flex;
+            align-items: center;
+            margin-left: 160px;
+            text-transform: capitalize;
+            line-height: 1.7; 
+            letter-spacing: 1px;
+            cursor: pointer;
+            font-weight: 600;
+        &--logo{
+            // background-color:lightgray;
+            margin-right: 10px;
+        }
+    }
+    }
+    
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no repeat;
+    background-color: red;
+    border-collapse: collapse ;
+    border-bottom: 5px solid black;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    box-sizing: border-box;
+    height: 150px;
+    width: 100%;
+    text-align: center;
+    font-size: 70px;
+    font-weight: 800;
+    margin: 0px 0px 0px 0px;
+    color: yellow;
+    text-shadow: 3px 3px 0 rgb(0, 70, 146),
+    -3px 3px 0 rgb(0, 70, 146),
+    3px -3px 0 rgb(0, 70, 146),
+    -3px -3px 0 rgb(0, 70, 146),
+    0px 3px 0 rgb(0, 70, 146),
+    0px -3px 0 rgb(0, 70, 146),
+    -3px 0px 0 rgb(0, 70, 146),
+    3px 0px 0 rgb(0, 70, 146),
+    4px 4px 0 rgb(0, 70, 146),
+    -4px 4px 0 rgb(0, 70, 146),
+    4px -4px 0 rgb(0, 70, 146),
+    -4px -4px 0 rgb(0, 70, 146),
+    0px 4px 0 rgb(0, 70, 146),
+    0px -4px 0 rgb(0, 70, 146),
+    -4px 0px 0 rgb(0, 70, 146),
+    4px 0px 0 rgb(0, 70, 146),
+    3px 4px 0 rgb(0, 70, 146),
+    -3px 4px 0 rgb(0, 70, 146),
+    3px -4px 0 rgb(0, 70, 146),
+    -3px -4px 0 rgb(0, 70, 146),
+    4px 3px 0 rgb(0, 70, 146),
+    -4px 3px 0 rgb(0, 70, 146),
+    4px -3px 0 rgb(0, 70, 146),
+    -4px -3px 0 rgb(0, 70, 146);
+
+}
+
