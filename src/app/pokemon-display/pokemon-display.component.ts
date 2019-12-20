@@ -7,7 +7,7 @@ import{PokemonService} from '../pokemon.service'
 })
 export class PokemonDisplayComponent implements OnInit {
   pokemon : Object
-  photoLink: String
+  photoLink
   pokemons: Array<Object>
   constructor(private pokemonService : PokemonService) { 
 

@@ -1,3 +1,3 @@
-<div *ngFor='let pokemon of pokemons; index as i'>
+<div *ngFor='let pokemon of pokemons; index as i' routerLink='/{{pokemon.name}}'>
     {{pokemon.name}}
 </div>

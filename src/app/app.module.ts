@@ -8,13 +8,16 @@ import { PokemonDisplayComponent } from './pokemon-display/pokemon-display.compo
 import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
- { path: 'list', component:ListComponent},
- { path: '', redirectTo: 'list', pathMatch: 'full' },]
+ { path: 'pokedex', component:ListComponent},
+ {path:'pokedex/:name',component:PokemonDisplayComponent},
+ { path: '', redirectTo: '/pokedex', pathMatch: 'full' },]
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
-    LandingpageComponent
+    LandingpageComponent,
+    PokemonDisplayComponent
+
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,6 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true }),
       HttpClientModule,
-    PokemonDisplayComponent
   ],
 
   providers: [],

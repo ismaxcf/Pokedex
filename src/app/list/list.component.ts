@@ -8,13 +8,17 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-  pokemons=undefined
+  pokemons : Array<Object>
   constructor(private PokemonService:PokemonService, private route: ActivatedRoute) { }
+  ngOnclick(){
+
+  }
 
   ngOnInit() {
-    this.pokemons=this.PokemonService.getpokemonname()
-    console.log(this.pokemons)
-
+    this.PokemonService.getpokemonname().subscribe(data=>{
+      this.pokemons=data['results']
+    })
+    
   }
 
 }
