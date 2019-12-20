@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landingpage.component.scss']
 })
 export class LandingpageComponent implements OnInit {
-
-  constructor() { }
+  pokemonName:string
+  constructor() { 
+    this.pokemonName = 'pikachu'
+  }
 
   ngOnInit() {
   }
