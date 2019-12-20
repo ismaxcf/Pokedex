@@ -1,4 +1,5 @@
 <div *ngIf="this.pokemon"class="pokemonDisplay">
+    <img src="../../assets/closeIcon.png" class="pokemonDisplay__Close" (click)="CloseDisplay()">
   <h2 class="pokemonDisplay__Name">{{this.pokemon.name}}</h2>
 
   <div class="PokemonContainer">

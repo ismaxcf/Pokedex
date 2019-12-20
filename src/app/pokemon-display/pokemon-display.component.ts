@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import{PokemonService} from '../pokemon.service'
 @Component({
   selector: 'app-pokemon-display',
@@ -6,6 +6,7 @@ import{PokemonService} from '../pokemon.service'
   styleUrls: ['./pokemon-display.component.scss']
 })
 export class PokemonDisplayComponent implements OnInit {
+  @Input() pokemonName:string //Nombre del pokemon a pasar en la etiqueta html del componente [pokemonName]
   pokemon : Object
   photo: Object
   female:boolean
@@ -16,7 +17,7 @@ export class PokemonDisplayComponent implements OnInit {
 
   ngOnInit() {
     console.log("ng Init")
-    this.pokemonService.getPokemon("houndoom").subscribe(data=>{
+    this.pokemonService.getPokemon(this.pokemonName).subscribe(data=>{
       this.pokemon=data
       console.log(this.pokemon)
       this.photo['link']=this.pokemon['sprites'].front_default
@@ -64,6 +65,13 @@ export class PokemonDisplayComponent implements OnInit {
         this.photo['link'] = this.pokemon['sprites'][this.photo['name']]
       }
       
+    }
+  }
+
+  CloseDisplay(){
+    if(confirm("Cerrar detalle del pokemon?")){
+      this.pokemon = undefined
+      this.photo = undefined
     }
   }
 

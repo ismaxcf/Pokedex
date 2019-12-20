@@ -1,9 +1,21 @@
 .pokemonDisplay{
     width: 50%;
-    background-color: red;
+    height: 50%;
+    background-color: rgba(255, 0, 0, 0.25);
+    position: relative;
     &__Name{
+        padding-top: 1.5rem;
         text-align: center;
         text-transform: uppercase;
+    }
+    &__Close{
+        width: 3rem;
+        position: absolute;
+        left:92%;
+        top:5%;
+        &:hover{
+            cursor: pointer;
+        }
     }
 }
 .PokemonContainer{
@@ -21,10 +33,14 @@
     }
     &__Menu{
         list-style: none;
+        display: flex;
+        padding: 0;
     }
     &__Option{
+        cursor: pointer;
         display: inline-block;
-        padding:.5rem;
+        padding:.8rem;
+        font-size: 1.2rem;
         background-color: blue;
         color: white;
         border-radius: 10px;
@@ -37,6 +53,7 @@
 .DetailsList{
     list-style: none;
     font-size: 1.5rem;
+    font-weight: bold;
     &__Detail{
         margin-bottom: 1rem;
     }
