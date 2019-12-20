@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {PokemonService} from '../pokemon.service'
+import {PokemonService} from '../pokemon.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -7,13 +8,14 @@ import {PokemonService} from '../pokemon.service'
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-
-  pokemons:Array<Object>
-
-  constructor(private PokemonService:PokemonService) { }
+  pokemons : Array<Object>
+  constructor(private PokemonService:PokemonService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-   this.PokemonService.getpokemonname().subscribe(data => {this.pokemons = data['results']})
+    this.PokemonService.getpokemonname().subscribe(data=>{
+      this.pokemons=data['results']
+    })
+    
   }
 
 }
