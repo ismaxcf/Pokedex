@@ -16,3 +16,4 @@ export class PokemonService {
     return this.httpClient.get("https://pokeapi.co/api/v2/pokemon/"+id)
   }
 }
+
