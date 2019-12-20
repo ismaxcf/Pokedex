@@ -19,5 +19,18 @@ export class PokemonMapComponent implements OnInit {
     Esri_WorldImagery.addTo(myMap)
     let marker = L.marker([40.425941, -3.565470]).bindPopup('COSLADA')
     marker.addTo(myMap)
+    for(let i=0;i<15;i++){
+      L.marker(this.getRandomLatLng(myMap)).addTo(myMap)
+    }
+  }
+  getRandomLatLng(map) {
+    var bounds = map.getBounds(),
+      southWest = bounds.getSouthWest(),
+      northEast = bounds.getNorthEast(),
+      lngSpan = northEast.lng - southWest.lng,
+      latSpan = northEast.lat - southWest.lat;
+    return new L.LatLng(
+        southWest.lat + latSpan * Math.random(),
+        southWest.lng + lngSpan * Math.random());
   }
 }
