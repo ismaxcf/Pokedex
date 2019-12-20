@@ -10,9 +10,6 @@ import { ActivatedRoute } from '@angular/router';
 export class ListComponent implements OnInit {
   pokemons : Array<Object>
   constructor(private PokemonService:PokemonService, private route: ActivatedRoute) { }
-  ngOnclick(){
-
-  }
 
   ngOnInit() {
     this.PokemonService.getpokemonname().subscribe(data=>{
