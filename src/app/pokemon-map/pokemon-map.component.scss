@@ -1,6 +1,9 @@
 @import "~leaflet/dist/leaflet.css";
-
-#mymap{
-    width: 100vw;
-    height: 100vh;
+.pokeMap{
+    background-color: red;
+    width: 50vw;
+}
+#myMap{
+    width: 50vw;
+    height: 50vh;
 }
