@@ -1,28 +1,35 @@
-import { Component, OnInit, Input } from '@angular/core';
-import{PokemonService} from '../pokemon.service'
+import { Component, OnInit } from '@angular/core';
+import{PokemonService} from '../pokemon.service';
+import{ActivatedRoute, ParamMap} from '@angular/router'
 @Component({
   selector: 'app-pokemon-display',
   templateUrl: './pokemon-display.component.html',
   styleUrls: ['./pokemon-display.component.scss']
 })
 export class PokemonDisplayComponent implements OnInit {
-  @Input() pokemonName:string //Nombre del pokemon a pasar en la etiqueta html del componente [pokemonName]
+  pokemonName:string
   pokemon : Object
   photo: Object
   female:boolean
-  constructor(private pokemonService : PokemonService) { 
+  constructor(private pokemonService : PokemonService, private route:ActivatedRoute) { 
     this.photo = {link:'',name:''}
-    this.female
   }
 
   ngOnInit() {
-    console.log("ng Init")
-    this.pokemonService.getPokemon(this.pokemonName).subscribe(data=>{
-      this.pokemon=data
-      console.log(this.pokemon)
-      this.photo['link']=this.pokemon['sprites'].front_default
-      this.photo['name'] = 'front_default'
+      this.route.paramMap
+        .subscribe((params:ParamMap)=>{
+          console.log(params)
+          this.pokemonName=params.get('name')
+          this.pokemonService.getPokemon(this.pokemonName).subscribe(data=>{
+            this.pokemon=data
+          
+            console.log(this.pokemon)
+            this.photo['link']=this.pokemon['sprites'].front_default
+            this.photo['name'] = 'front_default'
     })
+        })
+    console.log("ng Init")
+    
   }
 
   ChangeSex(){

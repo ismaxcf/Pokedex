@@ -1,9 +1,8 @@
 <div *ngIf="this.pokemon"class="pokemonDisplay">
     <img src="../../assets/closeIcon.png" class="pokemonDisplay__Close" (click)="CloseDisplay()">
+    <img src="../../assets/pokedexLeft.PNG" alt="pokedexmargin" class="pokemonDisplay__Pokedex--left">
   <h2 class="pokemonDisplay__Name">{{this.pokemon.name}}</h2>
-
   <div class="PokemonContainer">
-
     <div class="PokemonPhotosContainer">
         <img class="PokemonPhotosContainer__Sprite" src={{this.photo.link}} alt="">
         <ul class="PokemonPhotosContainer__Menu">
@@ -20,7 +19,6 @@
             <li class="DetaislList__Detail">Weight: {{this.pokemon.weight}}</li>
         </ul>
     </div>
-
   </div>
-  
+  <img src="../../assets/pokedexRight.PNG" alt="pokedexmargin" class="pokemonDisplay__Pokedex--right">
 </div>

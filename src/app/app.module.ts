@@ -1,24 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { ListComponent } from './list/list.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { PokemonDisplayComponent } from './pokemon-display/pokemon-display.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PokedexComponent } from './pokedex/pokedex.component';
 import { PokemonMapComponent } from './pokemon-map/pokemon-map.component';
-
+const appRoutes: Routes = [
+ { path: 'pokedex', component:LandingpageComponent},
+ {path:'pokedex/:name',component:LandingpageComponent},
+ { path: '', redirectTo: '/pokedex', pathMatch: 'full' },]
+ 
 @NgModule({
   declarations: [
     AppComponent,
+    ListComponent,
     LandingpageComponent,
     PokemonDisplayComponent,
-    PokemonMapComponent
+    PokedexComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
-    LeafletModule.forRoot()
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true }),
+      HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

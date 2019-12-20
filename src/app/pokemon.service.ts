@@ -12,7 +12,8 @@ export class PokemonService {
     return this.httpClient.get("https://pokeapi.co/api/v2/pokemon?limit=800")
 
   }
-  getPokemon(id:string):Observable<Object>{
+  getPokemon(id):Observable<Object>{
     return this.httpClient.get("https://pokeapi.co/api/v2/pokemon/"+id)
   }
 }
+
