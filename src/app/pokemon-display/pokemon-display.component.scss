@@ -1,10 +1,15 @@
 .pokemonDisplay{
     width: 50%;
-
+    background-color: red;
     &__Name{
         text-align: center;
         text-transform: uppercase;
     }
+}
+.PokemonContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 .PokemonPhotosContainer{
     width: 50%;
@@ -27,4 +32,17 @@
             margin-right: 5px;
         }
     }
+}
+
+.DetailsList{
+    list-style: none;
+    font-size: 1.5rem;
+    &__Detail{
+        margin-bottom: 1rem;
+    }
+    &__Element{
+        margin-right: .5rem;
+        text-transform: capitalize;            
+        }
+    
 }

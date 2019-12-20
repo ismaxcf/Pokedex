@@ -7,30 +7,64 @@ import{PokemonService} from '../pokemon.service'
 })
 export class PokemonDisplayComponent implements OnInit {
   pokemon : Object
-  photoLink: String
+  photo: Object
+  female:boolean
   constructor(private pokemonService : PokemonService) { 
-
+    this.photo = {link:'',name:''}
+    this.female
   }
 
   ngOnInit() {
     console.log("ng Init")
-    this.pokemonService.getPokemon("mewtwo").subscribe(data=>{
+    this.pokemonService.getPokemon("houndoom").subscribe(data=>{
       this.pokemon=data
       console.log(this.pokemon)
-      this.photoLink = this.pokemon['sprites'].front_default
+      this.photo['link']=this.pokemon['sprites'].front_default
+      this.photo['name'] = 'front_default'
     })
   }
 
   ChangeSex(){
-    console.log("Changing...")
+    if(this.photo['name'].split('_')[1]==='default'){
+      console.log(this.photo['name'].split('_')[0].concat('_female'))
+      if(this.pokemon['sprites'][this.photo['name'].split('_')[0].concat('_female')]){
+        this.photo['name'] =  this.photo['name'].split('_')[0].concat('_female')
+        this.photo['link'] = this.pokemon['sprites'][this.photo['name']]
+      }else{
+        alert('Photo not found')
+      }
+
+    }else{
+        this.photo['name'] =  this.photo['name'].split('_')[0].concat('_default')
+        this.photo['link'] = this.pokemon['sprites'][this.photo['name']]
+    }
   }
 
   ChangePerspective(){
-    console.log("Turn around")
+    if(this.photo['name'].split('_')[0]==='front'){
+      this.photo['name']='back_'.concat(this.photo['name'].split('_')[1])
+      this.photo['link'] = this.pokemon['sprites'][this.photo['name']]
+    }else{
+      this.photo['name']='front_'.concat(this.photo['name'].split('_')[1])
+      this.photo['link'] = this.pokemon['sprites'][this.photo['name']]
+    }
   }
 
   ChangeShiny(){
-    console.log("Change Shiny")
+    let nameArray = this.photo['name'].split('_')
+    if(nameArray[1]==='female'){
+      this.photo['name']=nameArray[0]+'_shiny_'+nameArray[1]
+      this.photo['link'] = this.pokemon['sprites'][this.photo['name']]
+    }else{
+      if(nameArray[1]==='shiny'){
+        this.photo['name']=nameArray[0]+'_default'
+        this.photo['link'] = this.pokemon['sprites'][this.photo['name']]
+      }else{
+        this.photo['name']=nameArray[0]+'_shiny'
+        this.photo['link'] = this.pokemon['sprites'][this.photo['name']]
+      }
+      
+    }
   }
 
 }
