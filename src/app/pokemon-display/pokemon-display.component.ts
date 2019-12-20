@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output , EventEmitter} from '@angular/core';
 import{PokemonService} from '../pokemon.service';
 import{ActivatedRoute, ParamMap} from '@angular/router'
+
 @Component({
   selector: 'app-pokemon-display',
   templateUrl: './pokemon-display.component.html',
   styleUrls: ['./pokemon-display.component.scss']
 })
 export class PokemonDisplayComponent implements OnInit {
+  @Output() mapPokemon :  EventEmitter<Object>
   pokemonName:string
   pokemon : Object
   photo: Object
@@ -26,6 +28,10 @@ export class PokemonDisplayComponent implements OnInit {
             console.log(this.pokemon)
             this.photo['link']=this.pokemon['sprites'].front_default
             this.photo['name'] = 'front_default'
+            this.mapPokemon.emit({
+              name: this.pokemonName,
+              photo: this.photo['link']
+            })
     })
         })
     console.log("ng Init")
