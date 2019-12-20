@@ -26,6 +26,11 @@ export class PokemonDisplayComponent implements OnInit {
             console.log(this.pokemon)
             this.photo['link']=this.pokemon['sprites'].front_default
             this.photo['name'] = 'front_default'
+             this.pokemonService.getPokemonDescription(this.pokemon['species'].url).subscribe(data=>{
+               console.log(data['flavor_text_entries'])
+               let aux=data['flavor_text_entries']
+              this.pokemon['description']=aux.filter(x=>x['language'].name==="en")[0].flavor_text
+            })
     })
         })
     console.log("ng Init")

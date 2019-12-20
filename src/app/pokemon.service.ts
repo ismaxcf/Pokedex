@@ -15,5 +15,9 @@ export class PokemonService {
   getPokemon(id):Observable<Object>{
     return this.httpClient.get("https://pokeapi.co/api/v2/pokemon/"+id)
   }
+  
+  getPokemonDescription(url:string):Observable<Object>{
+    return this.httpClient.get(url)
+  }
 }
 
