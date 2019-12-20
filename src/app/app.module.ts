@@ -12,6 +12,7 @@ const appRoutes: Routes = [
  { path: 'pokedex', component:LandingpageComponent},
  {path:'pokedex/:name',component:LandingpageComponent},
  { path: '', redirectTo: '/pokedex', pathMatch: 'full' },]
+ 
 @NgModule({
   declarations: [
     AppComponent,
