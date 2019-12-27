@@ -1,26 +1,22 @@
-.pokemonDisplay {    
-    font-size: 20px;
+.pokemonDisplay {   
+    font-size: 16px;
     animation: 2s ease-out 0s 1 loadBColor;
     width: 90%;
-    height: 100%;
+    height: 95%;
+    background-image: url("https://i.imgur.com/OVO67Y5.png");
     background-color: rgba(208, 234, 233, 0.8);
     background-size: 0%;
     position: relative;
     border-radius: 20px;
     &__Name{
-        // margin-left: 400px;
-        // width: 300px;
-        // height: 50px;
-        // background-color: black;
         color: black;
-        font-family:  Calibri;
-        // opacity: 0;
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
+        font-family:  Roboto;
+        font-weight: 1000;
+        padding-top: 2rem;
+        // padding-bottom: 0.5rem;
         text-align: center;
-        // justify-content: center;
         text-transform: uppercase;
-        font-size: 50px;
+        font-size: 60px;
         animation: 2s ease-out 0s 1 growUp;
         letter-spacing: 1px;
     }
@@ -96,51 +92,66 @@
     align-items: center;
     padding-left: 20%;
     width: 75%;
-    padding-bottom: 2%;
-    
+    padding-bottom: 2%;  
 }
+
 .PokemonPhotosContainer{
-    width: 40%;
+    width: 100px;
+    margin: 0px 80px 0px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     &__Sprite{
-        width: 15rem;
+        width: 200px;
+        height: 50%;
     }
     &__Menu{
-        list-style: none;
+        width: 100px;
+        height: 40px;
         display: flex;
         padding: 0;
+        margin-bottom: 30px;
+        margin-left: 55px;
     }
     &__Option{
+        width: 130px;
+        height: 30px;
         display: flex;
         justify-content: center;
+        align-content: center;
         font-family:  Calibri;
         cursor: pointer;
         display: inline-block;
-        padding:.8rem;
-        font-size: 20px;
+        padding: .4rem .6rem .6rem .6rem;
+        font-size: 16px;
         background-color: grey;
         color: white;
-        border-radius: 10px;
+        border-radius: 8px;
         &:not(:last-child){
-            margin-right: 5px;
+            margin-right: 7px;
         
         }
     }
 }
 
+.PokemonDataContainer{
+    margin-left:160px;
+}
+
 .DetailsList{
-    font-family:  Calibri;
-    list-style: none;
-    font-size: 30px;
+    border: 1px solid black;
+    border-radius: 8px;
+    width:100%;
+    height: 150px;
     font-weight: bold;
-    padding-bottom: 25px;
+    font-family:  Calibri;
+    font-size: 22px;
+    padding: 30px 20px 30px 30px;    
     &__Detail{
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
     }
     &__Element{
-        margin-right: 0.5rem;
+        margin-right: 0.1rem;
         text-transform: capitalize;            
         }
     

@@ -1,11 +1,11 @@
 <div class="list">
-    <div class="title">
+    <!-- <div class="title">
         PoKeList
-    </div>
+    </div> -->
+    
     <div class="list--box">
-        <br>
-        <input list="typeList">
-        <datalist id="typeList" >
+        <input list="list--box--typeList" class="list--box--typeList" placeholder=" Search by type here">
+        <datalist id="list--box--typeList" >
             <option *ngFor = "let type of pokemonTypes; index as i" value= '{{type.name}}' id="option">
         </datalist>
         <div class="list--box--item" *ngFor = "let pokemon of pokemons; index as i" routerLink='/pokedex/{{pokemon.name}}'> 
@@ -14,6 +14,7 @@
         </div>
     </div>
 </div>
+
 <!--
     <div class="list--box--item" *ngFor = "let pokemon of pokemons; index as i" routerLink=/pokedex/{{pokemon.name}}> 
             <img class="list--box--item--logo" src="https://cdn3.iconfinder.com/data/icons/universal-icons-3/1000/pokeball_A-512.png" width="30px" height="30px">
