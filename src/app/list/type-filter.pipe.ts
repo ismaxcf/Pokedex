@@ -6,8 +6,7 @@ import {PipeTransform, Pipe} from '@angular/core';
 export class TypeFilteredPipe implements PipeTransform{
     transform(pokemons,searchTerm){
         if(pokemons && !searchTerm){
-            // console.log(searchTerm)
-         
+             console.log(searchTerm)
             return pokemons
         }
         console.log(pokemons.filter(pokemon=>pokemon.name.toLowerCase().indexOf(searchTerm.toLowerCase())!==-1))
