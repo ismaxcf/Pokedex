@@ -1,13 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
+body{
+    width: 100%;
+    height: 100%;
+}
+
 header{
-    height: 15vh;
+    box-sizing: border-box;
+    height: 17vh;
     background-color: red;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border: 5px solid black;
+    align-items: center;
     .logo-left{
-        width: 15%;
+        width: 10%;
+        height: 90%;
         img{
             height: 100%;
             width: 100%;
@@ -15,15 +24,51 @@ header{
         }
     }
     .title{
-        width: 70%;
-        img{
-            height: 100%;
-            width: 100%;
-            object-fit: scale-down;
-        }
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-repeat: no repeat;
+            border-collapse: collapse ;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            box-sizing: border-box;
+            height: 150px;
+            width: 38%;
+            text-align: center;
+            font-family: Roboto;
+            font-size: 80px;
+            font-weight: 600;
+            letter-spacing: 20px; 
+            margin: 0% 0% 0% 0%;
+            color: white;
+            text-shadow: 2px 2px 0 black,
+            -2px 2px 0 black,
+            2px -2px 0 black,
+            -2px -2px 0 black,
+            0px 2px 0 black,
+            0px -2px 0 black,
+            -2px 0px 0 black,
+            2px 0px 0 black,
+            3px 3px 0 black,
+            -3px 3px 0 black,
+            3px -3px 0 black,
+            -3px -3px 0 black,
+            0px 3px 0 black,
+            0px -3px 0 black,
+            -3px 0px 0 black,
+            3px 0px 0 black,
+            2px 3px 0 black,
+            -2px 3px 0 black,
+            2px -3px 0 black,
+            -2px -3px 0 black,
+            3px 2px 0 black,
+            -3px 2px 0 black,
+            3px -2px 0 black,
+            -3px -2px 0 black;     
     }
     .logo-right{
-        width: 15%;
+        width: 10%;
+        height:80%;
         img{
             height: 100%;
             width: 100%;
@@ -32,17 +77,21 @@ header{
     }
 }
 section{
-    height: 82vh;
-    background-image: linear-gradient(to right bottom, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.65)), url(../../assets/img/pokemon-list.0.0.jpg);
+    padding: 0px 40px 0px 0px;
+    height: 78vh;
+    background-image: linear-gradient(to right bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(http://images.wikia.com/es.pokemon/images/6/67/Ruta_1.png);
 
 }
 footer{
-    height: 3vh;
+    font-family: calibri;
+    font-size: 30px;
+    height: 5vh;
     background-color: gray;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    align-content: center;
     color: white;
     .copyright{
         color: rgb(164, 197, 43);

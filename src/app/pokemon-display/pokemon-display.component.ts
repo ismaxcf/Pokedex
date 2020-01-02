@@ -93,6 +93,9 @@ export class PokemonDisplayComponent implements OnInit {
     if(confirm("Cerrar detalle del pokemon?")){
       this.pokemon = undefined
       this.photo = undefined
+      this.pokemonName = undefined
+      this.photo = {link:'',name:''}
+      this.female = false
     }
   }
 
