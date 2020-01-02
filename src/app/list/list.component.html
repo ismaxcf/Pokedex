@@ -1,12 +1,24 @@
 <div class="list">
-    <div class="title">PoKeList</div>
-    <div class="list--box">
-        <br>
-        <div class="list--box--item" [class.list--box--item--selected]=" pokemon.name == selectedPokemon " 
-        *ngFor = "let pokemon of pokemons; index as i" routerLink='/pokedex/{{pokemon.name}}'
-        (onClick)="selectedPokemon = pokemon.name"> 
-            <img class="list--box--item--logo" src="https://cdn3.iconfinder.com/data/icons/universal-icons-3/1000/pokeball_A-512.png" width="30px" height="30px">
-               {{pokemon.name}}
-        </div>
+  <div class="title">PoKeList</div>
+  <div class="list--box">
+    <br>
+    <select (change)="filterType($event.target.value)">
+      <option value="0">--All--</option>
+      <option *ngFor='let type of pokemonsTypeFiltered' value={{type.type}}>
+        {{type.type}}
+      </option>
+    </select>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Search By Name" [(ngModel)]="searchTerm">
     </div>
+    <div class="list--box--item" *ngFor="let pokemon of pokemons | nameFilter:searchTerm;index as i"
+      routerLink='/pokedex/{{pokemon.name}}'>
+      <img class="list--box--item--logo"
+        src="https://cdn3.iconfinder.com/data/icons/universal-icons-3/1000/pokeball_A-512.png" width="30px"
+        height="30px" alt="pokeball">
+      <div *ngIf='filterByType ; else block'>{{pokemon}}</div>
+      <ng-template  #block>{{pokemon.name}}</ng-template>
+</div>
+
+  </div>
 </div>

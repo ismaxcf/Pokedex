@@ -8,7 +8,7 @@ import{ActivatedRoute, ParamMap} from '@angular/router'
   styleUrls: ['./pokemon-display.component.scss']
 })
 export class PokemonDisplayComponent implements OnInit {
-  @Output() mapPokemon :  EventEmitter<Object>
+  @Output() mapPokemon = new EventEmitter<Object>()
   pokemonName:string
   pokemon : Object
   photo: Object
@@ -28,15 +28,23 @@ export class PokemonDisplayComponent implements OnInit {
             console.log(this.pokemon)
             this.photo['link']=this.pokemon['sprites'].front_default
             this.photo['name'] = 'front_default'
+
             this.mapPokemon.emit({
               name: this.pokemonName,
               photo: this.photo['link']
             })
-    })
-        })
-    console.log("ng Init")
+
+             this.pokemonService.getPokemonDescription(this.pokemon['species'].url).subscribe(data=>{
+               console.log(data['flavor_text_entries'])
+               let aux=data['flavor_text_entries']
+               this.pokemon['description']=aux.filter(x=>x['language'].name==="en")[0].flavor_text
+               console.log( this.pokemon['description'])
+            })
     
-  }
+        })
+    console.log("ng Init")    
+  })
+}
 
   ChangeSex(){
     if(this.photo['name'].split('_')[1]==='default'){
@@ -85,6 +93,9 @@ export class PokemonDisplayComponent implements OnInit {
     if(confirm("Cerrar detalle del pokemon?")){
       this.pokemon = undefined
       this.photo = undefined
+      this.pokemonName = undefined
+      this.photo = {link:'',name:''}
+      this.female = false
     }
   }
 
