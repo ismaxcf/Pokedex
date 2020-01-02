@@ -8,7 +8,7 @@ import{ActivatedRoute, ParamMap} from '@angular/router'
   styleUrls: ['./pokemon-display.component.scss']
 })
 export class PokemonDisplayComponent implements OnInit {
-  @Output() mapPokemon :  EventEmitter<Object>
+  @Output() mapPokemon = new EventEmitter<Object>()
   pokemonName:string
   pokemon : Object
   photo: Object
