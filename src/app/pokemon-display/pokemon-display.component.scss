@@ -82,41 +82,49 @@
 .PokemonContainer{
     animation: 2s ease-out 0s 1 growUp;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+ 
     align-items: center;
     padding-left: 15%;
     width: 75%;
 }
 .PokemonPhotosContainer{
+    position:relative;
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     &__Sprite{
-        width: 15rem;
+        height:10rem;
+        width: 10rem;
     }
     &__Menu{
+        position:absolute;
+        display:flex;
+        right:12rem;
+      flex-direction: column;
         list-style: none;
         display: flex;
         padding: 0;
+      
     }
     &__Option{
         cursor: pointer;
         display: inline-block;
         padding:.8rem;
-        font-size: 1.2rem;
+        font-size: 1rem;
         background-color: blue;
         color: white;
         border-radius: 10px;
         &:not(:last-child){
-            margin-right: 5px;
+            margin-bottom: 5px;
         }
     }
 }
 
 .DetailsList{
     list-style: none;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: bold;
     &__Detail{
         margin-bottom: 1rem;

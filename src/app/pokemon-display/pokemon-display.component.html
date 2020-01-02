@@ -1,7 +1,7 @@
 <div *ngIf="this.pokemon"class="pokemonDisplay">
     <img src="../../assets/closeIcon.png" class="pokemonDisplay__Close" (click)="CloseDisplay()">
     <img src="../../assets/pokedexLeft.PNG" alt="pokedexmargin" class="pokemonDisplay__Pokedex--left">
-  <h2 class="pokemonDisplay__Name">{{this.pokemon.name}}</h2>
+  <h2 class="pokemonDisplay__Name"><span>#{{this.pokemon.id}} - </span>{{this.pokemon.name}}</h2>
   <div class="PokemonContainer">
     <div class="PokemonPhotosContainer">
         <img class="PokemonPhotosContainer__Sprite" src={{this.photo.link}} alt="">
@@ -12,13 +12,16 @@
         </ul>
     </div>
     <div class="PokemonDataContainer">
-        <ul class="DetailsList">
-            <li class="DetailsList__Detail">ID: {{this.pokemon.id}}</li>
+       <ul class="DetailsList">
             <li class="DetailsList__Detail" >Type: <span class="DetailsList__Element" *ngFor="let tipo of this.pokemon.types">{{tipo.type.name}}</span></li>
             <li class="DetailsList__Detail" >Abilities: <span class="DetailsList__Element" *ngFor="let abilitie of this.pokemon.abilities">{{abilitie.ability.name}}</span></li>
-            <li class="DetaislList__Detail">Weight: {{this.pokemon.weight}}</li>
+             <li class="DetaislList__Detail">{{this.pokemon.description}}</li>
         </ul>
+        
     </div>
   </div>
   <img src="../../assets/pokedexRight.PNG" alt="pokedexmargin" class="pokemonDisplay__Pokedex--right">
 </div>
+<!---
+ 
+-->
