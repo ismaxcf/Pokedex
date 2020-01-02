@@ -19,5 +19,10 @@ export class PokemonService {
   getPokemonDescription(url:string):Observable<Object>{
     return this.httpClient.get(url)
   }
+  getPokemonType():Observable<Object>{
+    return this.httpClient.get("https://pokeapi.co/api/v2/type")
+
+  }
+
 }
 

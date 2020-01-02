@@ -6,11 +6,12 @@
     <div class="PokemonPhotosContainer">
         <img class="PokemonPhotosContainer__Sprite" src={{this.photo.link}} alt="">
         <ul class="PokemonPhotosContainer__Menu">
-            <li class="PokemonPhotosContainer__Option" (click)="ChangeSex()">F/M</li>
-            <li class="PokemonPhotosContainer__Option"(click)="ChangePerspective()">Change perspective</li>
-            <li class="PokemonPhotosContainer__Option"(click)="ChangeShiny()">Shiny</li>
+            <li class="PokemonPhotosContainer__Option" (click)="ChangeSex()"> F/M </li>
+            <li class="PokemonPhotosContainer__Option"(click)="ChangePerspective()"> Change perspective </li>
+            <li class="PokemonPhotosContainer__Option"(click)="ChangeShiny()"> Shiny </li>
         </ul>
     </div>
+
     <div class="PokemonDataContainer">
        <ul class="DetailsList">
             <li class="DetailsList__Detail" >Type: <span class="DetailsList__Element" *ngFor="let tipo of this.pokemon.types">{{tipo.type.name}}</span></li>
@@ -19,9 +20,7 @@
         </ul>
         
     </div>
+    
   </div>
   <img src="../../assets/pokedexRight.PNG" alt="pokedexmargin" class="pokemonDisplay__Pokedex--right">
 </div>
-<!---
- 
--->
