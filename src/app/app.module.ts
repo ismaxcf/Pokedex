@@ -7,6 +7,8 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
 import { PokemonDisplayComponent } from './pokemon-display/pokemon-display.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PokedexComponent } from './pokedex/pokedex.component';
+import {TypeFilteredPipe} from './list/type-filter.pipe'
+import {FormsModule} from '@angular/forms'
 
 const appRoutes: Routes = [
  { path: 'pokedex', component:LandingpageComponent},
@@ -18,11 +20,12 @@ const appRoutes: Routes = [
     ListComponent,
     LandingpageComponent,
     PokemonDisplayComponent,
-    PokedexComponent
-
+    PokedexComponent,
+    TypeFilteredPipe
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: false }),

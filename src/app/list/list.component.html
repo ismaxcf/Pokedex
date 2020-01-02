@@ -1,23 +1,29 @@
 <div class="list">
-    <!-- <div class="title">
-        PoKeList
-    </div> -->
-    
-    <div class="list--box">
-        <input list="list--box--typeList" class="list--box--typeList" placeholder=" Search by type here">
-        <datalist id="list--box--typeList" >
-            <option *ngFor = "let type of pokemonTypes; index as i" value= '{{type.name}}' id="option">
-        </datalist>
-        <div class="list--box--item" *ngFor = "let pokemon of pokemons; index as i" routerLink='/pokedex/{{pokemon.name}}'> 
+     
+    <div class = "main">
+        <br>
+        <select (change)="filterType($event.target.value)" class="main--typeList">
+            <option value="0"> All </option>
+            <option *ngFor = 'let pokemons of pokemonsTypeFiltered' value= '{{pokemons.type}}'> 
+                {{pokemons.type}} </option>
+        </select>        
+        <select (change)="removeType($event.target.value)" class="main--typeList">
+            <option value="0"> All </option>
+            <option *ngFor = 'let pokemons of pokemonsTypeFiltered' value= '{{pokemons.type}}'> 
+                {{pokemons.type}} </option>
+        </select>
+        
+        <div class = "form-group">
+            <input type = "text" class="form-control" placeholder=" Search by Name" [(ngModel)] = "searchTerm">
+        </div>
+        <br>
+        <div *ngFor=" let pokemon of pokemons | nameFilter:searchTerm" >
             <img class="list--box--item--logo" src="https://cdn3.iconfinder.com/data/icons/universal-icons-3/1000/pokeball_A-512.png" width="30px" height="30px">
-               {{pokemon.name}}
+            <div *ngIf = 'filterByType ; else block' routerLink = '/pokedex/{{pokemon}}'> {{pokemon}} </div>
+            <ng-template #block><span routerLink='/pokedex/{{pokemon.name}}'>{{pokemon.name}} </span> </ng-template>
         </div>
     </div>
+
+
 </div>
 
-<!--
-    <div class="list--box--item" *ngFor = "let pokemon of pokemons; index as i" routerLink=/pokedex/{{pokemon.name}}> 
-            <img class="list--box--item--logo" src="https://cdn3.iconfinder.com/data/icons/universal-icons-3/1000/pokeball_A-512.png" width="30px" height="30px">
-               {{pokemon.name}}
-        </div>
--->
