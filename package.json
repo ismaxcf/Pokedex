@@ -10,9 +10,7 @@
     "e2e": "ng e2e"
   },
   "husky": {
-    "hooks": {
-      
-    }
+    "hooks": {}
   },
   "private": true,
   "dependencies": {

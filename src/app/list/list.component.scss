@@ -1,95 +1,94 @@
-.main{
-    margin-left: -350px;
-    margin-top: 50px;
-    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cd85dd3e-7bb0-4f58-a1e1-053a7763cd84/d84tnc4-221c208f-fcfa-48f6-8320-128ba4b1d1c2.png/v1/fill/w_1024,h_1697,strp/nintendo_game_boy_vector_by_cryoganix_d84tnc4-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTY5NyIsInBhdGgiOiJcL2ZcL2NkODVkZDNlLTdiYjAtNGY1OC1hMWUxLTA1M2E3NzYzY2Q4NFwvZDg0dG5jNC0yMjFjMjA4Zi1mY2ZhLTQ4ZjYtODMyMC0xMjhiYTRiMWQxYzIucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.9gCGU3cqmi9dUtqJZGH0g6RSoP4ceT6fNhflerWPnvA");
-    background-size: cover;
-    width: 30%;
-    height: 70%;
-    max-height: 100%;
-    font-family:  Roboto;
-    border: 5px solid black;
-    border-radius: 23px; 
-    border-bottom-right-radius: 180px;
-    box-sizing: content-box;  
-    position: absolute;
-    font-size: 40px;
-    cursor: pointer;    
-    &--typeList{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        height: 40px;
-        font-size: 20px;
-        border: 1px solid grey;
-        width: 100px;
-        margin-left: 210px;
-        margin-top: 0px;
-        font-weight: bold;
-    }
-    &--typeDelete{
-        height: 40px;
-        font-size: 20px;
-        border: 1px solid grey;
-        width: 220px;
-        margin-left: 210px;
-        margin-top: 10px;
-        position: relative;
-    }
-    &--box{
-        background-color: white;
-        box-sizing: content-box;  
-        border-radius: 10px; 
-        margin: 10px 0px 0px 200px;
-        background-color: rgb(148, 176, 39)e;
-        position: relative;
-        height: 40%;
-        width: 47%;
-        overflow: auto;
-      
-        &--item{
-            display: flex;
-            align-items: center;
-            padding-left: 20px;
-            text-transform: capitalize;
-            letter-spacing: 1px;
-            cursor: pointer;
-            font-weight: 600;
-        }
-        &--logo{
-            margin-right: 10px;
-        }
-        &--selected{
-            background-color: chartreuse;
-        }
-    }
-}
-.button{
-    font-weight: bold;
-    margin-left: 10px;
+.main {
+  margin-left: -350px;
+  margin-top: 50px;
+  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cd85dd3e-7bb0-4f58-a1e1-053a7763cd84/d84tnc4-221c208f-fcfa-48f6-8320-128ba4b1d1c2.png/v1/fill/w_1024,h_1697,strp/nintendo_game_boy_vector_by_cryoganix_d84tnc4-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTY5NyIsInBhdGgiOiJcL2ZcL2NkODVkZDNlLTdiYjAtNGY1OC1hMWUxLTA1M2E3NzYzY2Q4NFwvZDg0dG5jNC0yMjFjMjA4Zi1mY2ZhLTQ4ZjYtODMyMC0xMjhiYTRiMWQxYzIucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.9gCGU3cqmi9dUtqJZGH0g6RSoP4ceT6fNhflerWPnvA");
+  background-size: cover;
+  width: 30%;
+  height: 70%;
+  max-height: 100%;
+  font-family: Roboto;
+  border: 5px solid black;
+  border-radius: 23px;
+  border-bottom-right-radius: 180px;
+  box-sizing: content-box;
+  position: absolute;
+  font-size: 40px;
+  cursor: pointer;
+  &--typeList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     height: 40px;
     font-size: 20px;
-    border: 1px solid white;
-    border-radius: 15px;
-    width: 120px;
-    background-color: gray;
-    color: white;
+    border: 1px solid grey;
+    width: 100px;
+    margin-left: 210px;
+    margin-top: 0px;
+    font-weight: bold;
+  }
+  &--typeDelete {
+    height: 40px;
+    font-size: 20px;
+    border: 1px solid grey;
+    width: 220px;
+    margin-left: 210px;
+    margin-top: 10px;
+    position: relative;
+  }
+  &--box {
+    background-color: white;
+    box-sizing: content-box;
+    border-radius: 10px;
+    margin: 10px 0px 0px 200px;
+    background-color: rgb(148, 176, 39) e;
+    position: relative;
+    height: 40%;
+    width: 47%;
+    overflow: auto;
+
+    &--item {
+      display: flex;
+      align-items: center;
+      padding-left: 20px;
+      text-transform: capitalize;
+      letter-spacing: 1px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    &--logo {
+      margin-right: 10px;
+    }
+    &--selected {
+      background-color: chartreuse;
+    }
+  }
+}
+.button {
+  font-weight: bold;
+  margin-left: 10px;
+  height: 40px;
+  font-size: 20px;
+  border: 1px solid white;
+  border-radius: 15px;
+  width: 120px;
+  background-color: gray;
+  color: white;
 }
 .main--box::-webkit-scrollbar {
-    width: 15px;
+  width: 15px;
 }
 
 .main--box::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey; 
-    border-radius: 10px;
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
 }
 
 .main--box::-webkit-scrollbar-thumb {
-    background: grey; 
-    border-radius: 10px;
+  background: grey;
+  border-radius: 10px;
 }
 
 .main--box::-webkit-scrollbar-thumb:hover {
-    background: darkgrey; 
+  background: darkgrey;
 }
-
