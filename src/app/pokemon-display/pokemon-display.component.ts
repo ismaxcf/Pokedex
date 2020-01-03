@@ -8,7 +8,8 @@ import{ActivatedRoute, ParamMap} from '@angular/router'
   styleUrls: ['./pokemon-display.component.scss']
 })
 export class PokemonDisplayComponent implements OnInit {
-  @Output() mapPokemon = new EventEmitter<Object>()
+  @Output() emitter = new EventEmitter<string>()
+
   pokemonName:string
   pokemon : Object
   photo: Object
@@ -20,19 +21,13 @@ export class PokemonDisplayComponent implements OnInit {
   ngOnInit() {
       this.route.paramMap
         .subscribe((params:ParamMap)=>{
-          console.log(params)
           this.pokemonName=params.get('name')
           this.pokemonService.getPokemon(this.pokemonName).subscribe(data=>{
             this.pokemon=data
-          
-            console.log(this.pokemon)
-            this.photo['link']=this.pokemon['sprites'].front_default
+            this.photo['link']= this.pokemon['sprites'].front_default
             this.photo['name'] = 'front_default'
 
-            this.mapPokemon.emit({
-              name: this.pokemonName,
-              photo: this.photo['link']
-            })
+             this.emitter.emit(this.pokemonName)
 
              this.pokemonService.getPokemonDescription(this.pokemon['species'].url).subscribe(data=>{
                console.log(data['flavor_text_entries'])
@@ -98,5 +93,4 @@ export class PokemonDisplayComponent implements OnInit {
       this.female = false
     }
   }
-
 }
