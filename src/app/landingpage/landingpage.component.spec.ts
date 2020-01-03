@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { LandingpageComponent } from './landingpage.component';
+import { LandingpageComponent } from "./landingpage.component";
 
-describe('LandingpageComponent', () => {
+describe("LandingpageComponent", () => {
   let component: LandingpageComponent;
   let fixture: ComponentFixture<LandingpageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LandingpageComponent ]
-    })
-    .compileComponents();
+      declarations: [LandingpageComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('LandingpageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
