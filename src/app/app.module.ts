@@ -8,12 +8,12 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
 import { PokemonDisplayComponent } from './pokemon-display/pokemon-display.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PokedexComponent } from './pokedex/pokedex.component';
-import { TypeFilteredPipe} from './list/type-filter.pipe'
-
+import {TypeFilteredPipe} from './list/type-filter.pipe'
+import { PokemonMapComponent } from './pokemon-map/pokemon-map.component';
 
 const appRoutes: Routes = [
  { path: 'pokedex', component:LandingpageComponent},
- {path:'pokedex/:name',component:LandingpageComponent},
+ { path:'pokedex/:name',component:LandingpageComponent},
  { path: '', redirectTo: '/pokedex', pathMatch: 'full' },]
  
 @NgModule({
@@ -23,9 +23,8 @@ const appRoutes: Routes = [
     LandingpageComponent,
     PokemonDisplayComponent,
     PokedexComponent,
-    TypeFilteredPipe
-  
-
+    TypeFilteredPipe,
+    PokemonMapComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +34,6 @@ const appRoutes: Routes = [
       { enableTracing: false}),
       HttpClientModule,
   ],
-
   providers: [],
   bootstrap: [AppComponent]
 })

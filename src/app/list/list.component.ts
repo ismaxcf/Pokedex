@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {PokemonService} from '../pokemon.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { typeSourceSpan } from '@angular/compiler';
 
 @Component({
   selector: 'app-list',
@@ -15,6 +14,7 @@ export class ListComponent implements OnInit {
   pokemonsTypeFiltered : Array < Object >
   filterByType : boolean
   selectedPokemon : string
+  pokemonsTypeDeleted
   constructor(private PokemonService:PokemonService, private route: ActivatedRoute) {
     this.selectedPokemon=''
     this.filterByType=false
@@ -27,12 +27,11 @@ export class ListComponent implements OnInit {
         .subscribe((params:ParamMap)=>{
           if(params.get('name')) this.selectedPokemon = params.get('name')
         })
-      console.log(this.pokemons)
     })
     
     this.PokemonService.getPokemonType().subscribe(information =>{
       this.pokemonTypes = information['results'].filter(x=>x.name!== "unknown").filter(x=>x.name!== "shadow")
-      console.log(this.pokemonTypes)
+     
 
       this.pokemonTypes.forEach(type => {
         this.PokemonService.getTypeFilteredPokemons(type['name']).subscribe(data => {
@@ -53,8 +52,6 @@ export class ListComponent implements OnInit {
 
 
   filterType(filterVal: any) {
-    console.log(this.pokemonsTypeFiltered)
-    console.log(filterVal)
     if (filterVal == "0") {
       this.PokemonService.getPokemonName().subscribe(data => {
         this.pokemons = data['results']
@@ -69,28 +66,26 @@ export class ListComponent implements OnInit {
       console.log(filterVal)
       this.filterByType = true
         }
-        console.log(this.pokemons)
         
     }
     removeType(filterVal : any){
-      console.log(this.pokemons)
+      this.pokemonsTypeDeleted=this.pokemons
+      console.log(this.pokemonsTypeDeleted[0])
         let aux = this.pokemonsTypeFiltered.filter(x => x['type'] == filterVal)[0]['pokemons']
-        let pokemonListAux = []
-        console.log(aux)
-        for (let i= 0 ; i <= this.pokemons.length; i++) {
-          if (typeof this.pokemons[i] === "string"){
-            if (aux.includes(this.pokemons[i])){
-              this.pokemons.splice(i, 1) 
+        for (let i= 0 ; i <= this.pokemonsTypeDeleted.length; i++) {
+          if (typeof this.pokemonsTypeDeleted[i] === "string"){
+            if (aux.includes(this.pokemonsTypeDeleted[i])){
+              this.pokemonsTypeDeleted.splice(i, 1) 
               i--
             } 
           }else{
-            if (aux.includes(this.pokemons[i]['name'])){
-              this.pokemons.splice(i, 1)
+            if (aux.includes(this.pokemonsTypeDeleted[i]['name'])){
+              this.pokemonsTypeDeleted.splice(i, 1)
               i--
             } 
           }  
-        } 
-        console.log(this.pokemons)
+        }
+        
       }
 }
 
