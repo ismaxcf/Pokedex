@@ -8,8 +8,8 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
 import { PokemonDisplayComponent } from './pokemon-display/pokemon-display.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PokedexComponent } from './pokedex/pokedex.component';
-import { PokemonMapComponent } from './pokemon-map/pokemon-map.component';
 import {TypeFilteredPipe} from './list/type-filter.pipe'
+import { PokemonMapComponent } from './pokemon-map/pokemon-map.component';
 
 const appRoutes: Routes = [
  { path: 'pokedex', component:LandingpageComponent},
@@ -23,16 +23,15 @@ const appRoutes: Routes = [
     LandingpageComponent,
     PokemonDisplayComponent,
     PokedexComponent,
-    PokemonMapComponent,
-    TypeFilteredPipe  
-
+    TypeFilteredPipe,
+    PokemonMapComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: false }),
+      { enableTracing: false}),
       HttpClientModule,
   ],
   providers: [],

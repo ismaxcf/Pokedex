@@ -2,11 +2,15 @@
   <div class="title">PoKeList</div>
   <div class="list--box">
     <br>
+
+
     <select (change)="filterType($event.target.value)">
       <option value="0">--All--</option>
       <option *ngFor='let type of pokemonsTypeFiltered' value={{type.type}}>
         {{type.type}}
       </option>
+
+
     </select>
     <select (change)="removeType($event.target.value)" class="main--typeList">
         <option value="0"> All </option>
