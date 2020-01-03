@@ -71,6 +71,27 @@ export class ListComponent implements OnInit {
         console.log(this.pokemons)
         
     }
+
+    removeType(filterVal : any){
+      console.log(this.pokemons)
+        let aux = this.pokemonsTypeFiltered.filter(x => x['type'] == filterVal)[0]['pokemons']
+        let pokemonListAux = []
+        console.log(aux)
+        for (let i= 0 ; i <= this.pokemons.length; i++) {
+          if (typeof this.pokemons[i] === "string"){
+            if (aux.includes(this.pokemons[i])){
+              this.pokemons.splice(i, 1) 
+              i--
+            } 
+          }else{
+            if (aux.includes(this.pokemons[i]['name'])){
+              this.pokemons.splice(i, 1)
+              i--
+            } 
+          }  
+        } 
+        console.log(this.pokemons)
+      }
 }
 
 

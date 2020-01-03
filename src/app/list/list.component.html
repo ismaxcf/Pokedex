@@ -8,6 +8,11 @@
         {{type.type}}
       </option>
     </select>
+    <select (change)="removeType($event.target.value)" class="main--typeList">
+        <option value="0"> All </option>
+        <option *ngFor = 'let type of pokemonsTypeFiltered' value= '{{type.type}}'> 
+            {{type.type}} </option>
+    </select>
     <div class="form-group">
       <input type="text" class="form-control" placeholder="Search By Name" [(ngModel)]="searchTerm">
     </div>
