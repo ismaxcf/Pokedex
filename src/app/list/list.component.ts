@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {PokemonService} from '../pokemon.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
@@ -22,7 +22,5 @@ export class ListComponent implements OnInit {
           if(params.get('name')) this.selectedPokemon = params.get('name')
         })
     })
-    
   }
-
 }

@@ -12,7 +12,6 @@ import { PokemonMapComponent } from './pokemon-map/pokemon-map.component';
 const appRoutes: Routes = [
  { path: 'pokedex', component:LandingpageComponent},
  { path:'pokedex/:name',component:LandingpageComponent},
- { path:'map',component:PokemonMapComponent},
  { path: '', redirectTo: '/pokedex', pathMatch: 'full' },]
  
 @NgModule({
