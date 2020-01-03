@@ -1,12 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output , EventEmitter} from '@angular/core';
 import{PokemonService} from '../pokemon.service';
 import{ActivatedRoute, ParamMap} from '@angular/router'
+
 @Component({
   selector: 'app-pokemon-display',
   templateUrl: './pokemon-display.component.html',
   styleUrls: ['./pokemon-display.component.scss']
 })
 export class PokemonDisplayComponent implements OnInit {
+  @Output() emitter = new EventEmitter<string>()
+
   pokemonName:string
   pokemon : Object
   photo: Object
@@ -18,19 +21,25 @@ export class PokemonDisplayComponent implements OnInit {
   ngOnInit() {
       this.route.paramMap
         .subscribe((params:ParamMap)=>{
-          console.log(params)
           this.pokemonName=params.get('name')
           this.pokemonService.getPokemon(this.pokemonName).subscribe(data=>{
             this.pokemon=data
-          
-            console.log(this.pokemon)
-            this.photo['link']=this.pokemon['sprites'].front_default
+            this.photo['link']= this.pokemon['sprites'].front_default
             this.photo['name'] = 'front_default'
-    })
-        })
-    console.log("ng Init")
+
+             this.emitter.emit(this.pokemonName)
+
+             this.pokemonService.getPokemonDescription(this.pokemon['species'].url).subscribe(data=>{
+               console.log(data['flavor_text_entries'])
+               let aux=data['flavor_text_entries']
+               this.pokemon['description']=aux.filter(x=>x['language'].name==="en")[0].flavor_text
+               console.log( this.pokemon['description'])
+            })
     
-  }
+        })
+    console.log("ng Init")    
+  })
+}
 
   ChangeSex(){
     if(this.photo['name'].split('_')[1]==='default'){
@@ -79,7 +88,9 @@ export class PokemonDisplayComponent implements OnInit {
     if(confirm("Cerrar detalle del pokemon?")){
       this.pokemon = undefined
       this.photo = undefined
+      this.pokemonName = undefined
+      this.photo = {link:'',name:''}
+      this.female = false
     }
   }
-
 }

@@ -8,17 +8,22 @@ export class PokemonService {
 
   constructor(private httpClient:HttpClient) { }
   getpokemonname():Observable<Object>{
-    return this.httpClient.get("https://pokeapi.co/api/v2/pokemon?limit=800")
+
+    return this.httpClient.get("https://pokeapi.co/api/v2/pokemon?limit=1000")
+
   }
   getPokemon(id):Observable<Object>{
     return this.httpClient.get("https://pokeapi.co/api/v2/pokemon/"+id)
   }
+  
+  getPokemonDescription(url:string):Observable<Object>{
+    return this.httpClient.get(url)
+  }
   getPokemonType():Observable<Object>{
     return this.httpClient.get("https://pokeapi.co/api/v2/type")
   }
-  getTypeFilteredPokemons(id): Observable<Object>{
+  getTypeFilteredPokemons(id):Observable<Object>{
     return this.httpClient.get("https://pokeapi.co/api/v2/type/"+id)
   }
  
 }
-
