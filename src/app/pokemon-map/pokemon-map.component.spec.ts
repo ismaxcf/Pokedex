@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { PokemonMapComponent } from './pokemon-map.component';
+import { PokemonMapComponent } from "./pokemon-map.component";
 
-describe('PokemonMapComponent', () => {
+describe("PokemonMapComponent", () => {
   let component: PokemonMapComponent;
   let fixture: ComponentFixture<PokemonMapComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PokemonMapComponent ]
-    })
-    .compileComponents();
+      declarations: [PokemonMapComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('PokemonMapComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
