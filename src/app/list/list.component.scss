@@ -1,6 +1,7 @@
 .main{
     margin-left: -350px;
     margin-top: 50px;
+    background-color: white;
     // background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cd85dd3e-7bb0-4f58-a1e1-053a7763cd84/d84tnc4-221c208f-fcfa-48f6-8320-128ba4b1d1c2.png/v1/fill/w_1024,h_1697,strp/nintendo_game_boy_vector_by_cryoganix_d84tnc4-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTY5NyIsInBhdGgiOiJcL2ZcL2NkODVkZDNlLTdiYjAtNGY1OC1hMWUxLTA1M2E3NzYzY2Q4NFwvZDg0dG5jNC0yMjFjMjA4Zi1mY2ZhLTQ4ZjYtODMyMC0xMjhiYTRiMWQxYzIucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.9gCGU3cqmi9dUtqJZGH0g6RSoP4ceT6fNhflerWPnvA");
     background-size: cover;
     width: 30%;
@@ -12,22 +13,31 @@
     border-bottom-right-radius: 180px;
     box-sizing: content-box;  
     position: absolute;
-    font-size: 40px;
+    font-size: 30px;
     cursor: pointer;    
-    &--typeList{
+    &--buttonBlock{
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         position: relative;
         height: 40px;
         font-size: 20px;
         border: 1px solid grey;
-        width: 100px;
-        margin-left: 210px;
-        margin-top: 0px;
+        width: 100%;
+        margin-left: 0px;
+        padding-top: 10px 0px 10px 0px;
         font-weight: bold;
+        &--titleButton{
+            font-size: 30px;
+        }
+        &--button{
+        padding-top: 20px 0px 20px 0px;
+        font-weight: bold;
+        font-size: 40px;
+        }
     }
-    &--typeDelete{
+    &--deleteBlock{
+        display: none;
         height: 40px;
         font-size: 20px;
         border: 1px solid grey;

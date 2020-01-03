@@ -2,17 +2,24 @@
      
     <div class = "main">
         <br>
-        <select (change)="filterType($event.target.value)" class="main--typeList">
-            <option value="0"> All </option>
-            <option *ngFor = 'let pokemons of pokemonsTypeFiltered' value= '{{pokemons.type}}'> 
-                {{pokemons.type}} </option>
-        </select>        
-        <select (change)="removeType($event.target.value)" class="main--typeList">
-            <option value="0"> All </option>
-            <option *ngFor = 'let pokemons of pokemonsTypeFiltered' value= '{{pokemons.type}}'> 
-                {{pokemons.type}} </option>
-        </select>
-        
+        <div class = "main--buttonBlock"> 
+            <div class = "main--buttonBlock--titleButton"> Search by Type</div>
+            <select (change)="filterType($event.target.value)" class="-main--buttonBlock-button">
+                <option value="0"> All </option>
+                <option *ngFor = 'let pokemons of pokemonsTypeFiltered' value= '{{pokemons.type}}'> 
+                    {{pokemons.type}} </option>
+            </select>
+        </div>
+        <br>
+        <div class="main--buttonBlock">
+            <div class = "main--buttonBlock--titleButton"> Delete a Type</div>
+            <select (change)="removeType($event.target.value)" class="-main--buttonBlock--button">
+                <option value="0"> All </option>
+                <option *ngFor = 'let pokemons of pokemonsTypeFiltered' value= '{{pokemons.type}}'> 
+                    {{pokemons.type}} </option>
+            </select>
+        </div>     
+         <div>     
         <div class = "form-group">
             <input type = "text" class="form-control" placeholder=" Search by Name" [(ngModel)] = "searchTerm">
         </div>
@@ -22,6 +29,7 @@
             <div *ngIf = 'filterByType ; else block' routerLink = '/pokedex/{{pokemon}}'> {{pokemon}} </div>
             <ng-template #block><span routerLink='/pokedex/{{pokemon.name}}'>{{pokemon.name}} </span> </ng-template>
         </div>
+        </div>  
     </div>
 
 

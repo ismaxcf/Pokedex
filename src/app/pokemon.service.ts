@@ -19,8 +19,6 @@ export class PokemonService {
   getTypeFilteredPokemons(id): Observable<Object>{
     return this.httpClient.get("https://pokeapi.co/api/v2/type/"+id)
   }
-  // removePokemonType(): Observable<Object>{
-  //   return this.httpClient.get("https://pokeapi.co/api/v2/type")
-  // }
+ 
 }
 
