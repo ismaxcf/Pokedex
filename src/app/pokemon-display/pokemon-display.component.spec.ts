@@ -13,10 +13,10 @@ describe("PokemonDisplayComponent", () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PokemonDisplayComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(PokemonDisplayComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it("should create", () => {
     expect(component).toBeTruthy();

@@ -13,10 +13,10 @@ describe("LandingpageComponent", () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LandingpageComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(LandingpageComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it("should create", () => {
     expect(component).toBeTruthy();

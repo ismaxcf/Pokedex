@@ -13,10 +13,10 @@ describe("PokemonMapComponent", () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PokemonMapComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(PokemonMapComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it("should create", () => {
     expect(component).toBeTruthy();

@@ -25,7 +25,7 @@ const appRoutes: Routes = [
     PokemonDisplayComponent,
     PokedexComponent,
     TypeFilteredPipe,
-    PokemonMapComponent
+    PokemonMapComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +34,6 @@ const appRoutes: Routes = [
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
