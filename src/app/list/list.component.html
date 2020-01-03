@@ -2,7 +2,7 @@
   <div class="title">PoKeList</div>
   <div class="list--box">
     <br>
-    type:<select (change)="filterType($event.target.value)">
+   type:<select (change)="filterType($event.target.value)">
       <option value="0">--All--</option>
       <option *ngFor='let type of pokemonsTypeFiltered' value={{type.type}}>
         {{type.type}}
@@ -13,6 +13,8 @@
       <option *ngFor='let type of pokemonsTypeFiltered' value={{type.type}}>
         {{type.type}}
       </option>
+
+
     </select>
     <div class="form-group">
       <input type="text" class="form-control" placeholder="Search By Name" [(ngModel)]="searchTerm">
