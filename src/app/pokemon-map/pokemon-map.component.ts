@@ -12,7 +12,6 @@ export class PokemonMapComponent implements OnInit {
 
   /* @Input() name:string */
   name: string
-
   constructor(private pokemonService: PokemonService, private route: ActivatedRoute) {
     
   }

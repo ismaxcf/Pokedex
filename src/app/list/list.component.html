@@ -24,6 +24,5 @@
       <div *ngIf='filterByType ; else block' routerLink='/pokedex/{{pokemon}}'>{{pokemon}}</div>
       <ng-template  #block><span routerLink='/pokedex/{{pokemon.name}}'>{{pokemon.name}}</span></ng-template>
 </div>
-
   </div>
 </div>
