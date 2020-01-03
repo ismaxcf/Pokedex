@@ -8,7 +8,7 @@
             <h2 class="PokemonContainer__Name"><span>#{{this.pokemon.id}} - </span>{{this.pokemon.name}}</h2>
         
             <div class="PokemonPhotosContainer">
-                <img class="PokemonPhotosContainer__Sprite" src={{this.photo.link}} alt="">
+                <img class="PokemonPhotosContainer__Sprite"  (click)="Changeimg()" src={{this.photo.link}} alt="">
                 <ul class="PokemonPhotosContainer__Menu">
                     <li class="PokemonPhotosContainer__Option" (click)="ChangeSex()"> F/M </li>
                     <li class="PokemonPhotosContainer__Option"(click)="ChangePerspective()"> Change perspective </li>
