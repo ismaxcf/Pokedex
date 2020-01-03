@@ -1,28 +1,25 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http' 
-import { Observable } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class PokemonService {
+  constructor(private httpClient: HttpClient) {}
+  getpokemonname(): Observable<Object> {
+    return this.httpClient.get("https://pokeapi.co/api/v2/pokemon?limit=1000");
+  }
+  getPokemon(id): Observable<Object> {
+    return this.httpClient.get("https://pokeapi.co/api/v2/pokemon/" + id);
+  }
 
-  constructor(private httpClient:HttpClient) { }
-  getpokemonname():Observable<Object>{
-
-    return this.httpClient.get("https://pokeapi.co/api/v2/pokemon?limit=1000")
-
+  getPokemonDescription(url: string): Observable<Object> {
+    return this.httpClient.get(url);
   }
-  getPokemon(id):Observable<Object>{
-    return this.httpClient.get("https://pokeapi.co/api/v2/pokemon/"+id)
+  getPokemonType(): Observable<Object> {
+    return this.httpClient.get("https://pokeapi.co/api/v2/type");
   }
-  
-  getPokemonDescription(url:string):Observable<Object>{
-    return this.httpClient.get(url)
-  }
-  getPokemonType():Observable<Object>{
-    return this.httpClient.get("https://pokeapi.co/api/v2/type")
-  }
-  getTypeFilteredPokemons(id):Observable<Object>{
-    return this.httpClient.get("https://pokeapi.co/api/v2/type/"+id)
+  getTypeFilteredPokemons(id): Observable<Object> {
+    return this.httpClient.get("https://pokeapi.co/api/v2/type/" + id);
   }
 }
