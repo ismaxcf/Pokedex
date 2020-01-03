@@ -1,25 +1,24 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { PokemonMapComponent } from './pokemon-map.component';
+import { PokemonMapComponent } from './pokemon-map.component'
 
 describe('PokemonMapComponent', () => {
-  let component: PokemonMapComponent;
-  let fixture: ComponentFixture<PokemonMapComponent>;
+  let component: PokemonMapComponent
+  let fixture: ComponentFixture<PokemonMapComponent>
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PokemonMapComponent ]
-    })
-    .compileComponents();
-  }));
+      declarations: [PokemonMapComponent],
+    }).compileComponents()
+  }))
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PokemonMapComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(PokemonMapComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    expect(component).toBeTruthy()
+  })
+})
