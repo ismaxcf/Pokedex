@@ -1,9 +1,11 @@
 <div class="pokedexContainer">
-    <div class="listContainer">
-        <app-list></app-list>
-    </div>
-    <div class="MapAndDetailContainer">
-        <app-pokemon-display (emitter)="handlerPokemon($event)"></app-pokemon-display>
-        <app-pokemon-map *ngIf="mapPokemonName != undefined"></app-pokemon-map>
-    </div>
+  <div class="listContainer">
+    <app-list></app-list>
+  </div>
+  <div class="MapAndDetailContainer">
+    <app-pokemon-display
+      (emitter)="handlerPokemon($event)"
+    ></app-pokemon-display>
+    <app-pokemon-map *ngIf="mapPokemonName != undefined"></app-pokemon-map>
+  </div>
 </div>
