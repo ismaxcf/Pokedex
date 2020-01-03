@@ -34,6 +34,9 @@ export class PokemonMapComponent implements OnInit {
           });
           console.log("Name en el map:")
           console.log(this.name)
+          myMap.remove()
+          myMap = L.map('myMap', options).setView([40.425941, -3.565470], 6);
+          Esri_WorldImagery.addTo(myMap)
           for (let i = 0; i < 7; i++) {
             L.marker(this.getRandomLatLng(myMap), { icon: pokeMarker }).addTo(myMap).bindPopup(this.name)
           }
