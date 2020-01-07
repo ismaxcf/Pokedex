@@ -6,7 +6,7 @@
     <select (change)="filterType($event.target.value)">
       <option value="All">--All--</option>
       <option *ngFor="let type of pokemonsTypeFiltered" value="{{ type.type }}">
-        <span routerLink="/pokedex/a">{{ type.type }}</span>
+        <span>{{ type.type }}</span>
       </option>
     </select>
     <select (change)="removeType($event.target.value)" class="main--typeList">

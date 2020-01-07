@@ -27,39 +27,57 @@ export class ListComponent implements OnInit {
   }
   ngOnInit() {
     //this.filterType('0')
-    this.PokemonService.getpokemonname().subscribe(data => {
-      this.pokemons = data['results']
-      this.route.paramMap.subscribe((params: ParamMap) => {
-        if (params.get('name')) this.selectedPokemon = params.get('name')
-      })
-      console.log(this.pokemons)
-    })
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      if (params.get('name')) this.selectedPokemon = params.get('name')
+      if (params.get('type')) {
+        this.type = params.get('type')
+        if (this.type === 'All' || !this.type) {
+          this.PokemonService.getpokemonname().subscribe(data => {
+            this.pokemons = data['results']
+            console.log(this.pokemons)
+          })
+        }
+      }
+      console.log(this.type)
+      this.PokemonService.getPokemonType().subscribe(information => {
+        this.pokemonTypes = information['results']
+          .filter(x => x.name !== 'unknown')
+          .filter(x => x.name !== 'shadow')
+        console.log(this.pokemonTypes)
 
-    this.PokemonService.getPokemonType().subscribe(information => {
-      this.pokemonTypes = information['results']
-        .filter(x => x.name !== 'unknown')
-        .filter(x => x.name !== 'shadow')
-      console.log(this.pokemonTypes)
-
-      this.pokemonTypes.forEach(type => {
-        this.PokemonService.getTypeFilteredPokemons(type['name']).subscribe(
-          data => {
-            let aux = data['pokemon']
-            let typep = []
-            let obj = { type: data['name'] }
-            for (let i = 0; i < aux.length; i++) {
-              typep.push(aux[i]['pokemon']['name'])
+        this.pokemonTypes.forEach(type => {
+          this.PokemonService.getTypeFilteredPokemons(type['name']).subscribe(
+            data => {
+              let aux = data['pokemon']
+              let typep = []
+              let obj = {
+                type: data['name'],
+              }
+              for (let i = 0; i < aux.length; i++) {
+                typep.push(aux[i]['pokemon']['name'])
+              }
+              console.log(typep)
+              obj['pokemons'] = typep
+              this.pokemonsTypeFiltered.push(obj)
+              console.log(this.type)
+              console.log(data)
+              if (this.type === data['name']) {
+                this.pokemons = typep
+                console.log('type equal')
+                this.filterByType = true
+              }
+              console.log(this.pokemons)
             }
-            obj['pokemons'] = typep
-            this.pokemonsTypeFiltered.push(obj)
-            console.log(this.pokemonsTypeFiltered)
-          }
-        )
+          )
+        })
       })
     })
   }
 
   filterType(filterVal: any) {
+    console.log('change type')
+    this.router.navigateByUrl('/pokedex/' + filterVal)
+    /*
     console.log(this.pokemonsTypeFiltered)
     console.log(filterVal)
     if (filterVal == 'All') {
@@ -79,7 +97,7 @@ export class ListComponent implements OnInit {
     }
     console.log(this.pokemons)
     this.type = filterVal
-    this.router.navigateByUrl('/pokedex/' + filterVal)
+   */
   }
 
   removeType(filterVal: any) {
