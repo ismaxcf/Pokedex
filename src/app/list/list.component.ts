@@ -8,13 +8,14 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router'
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
-  @Output() listEmitter = new EventEmitter<object>()
+  @Output() listEmitter = new EventEmitter<any>()
   pokemons: Array<Object>
   pokemonTypes: Array<Object>
   pokemonsTypeFiltered: Array<Object>
   filterByType: boolean
   selectedPokemon: string
   type: string
+  pokemonsForMap: Array<string>
   constructor(
     private PokemonService: PokemonService,
     private route: ActivatedRoute,
@@ -24,6 +25,7 @@ export class ListComponent implements OnInit {
     this.filterByType = false
     this.pokemonsTypeFiltered = []
     this.type = 'All'
+    this.pokemonsForMap = []
   }
   ngOnInit() {
     //this.filterType('0')
@@ -34,6 +36,8 @@ export class ListComponent implements OnInit {
         if (this.type === 'All' || !this.type) {
           this.PokemonService.getpokemonname().subscribe(data => {
             this.pokemons = data['results']
+            this.pokemonsForMap = []
+            console.log(this.pokemonsForMap)
             console.log(this.pokemons)
           })
         }
@@ -63,6 +67,9 @@ export class ListComponent implements OnInit {
               console.log(data)
               if (this.type === data['name']) {
                 this.pokemons = typep
+                this.pokemonsForMap = typep
+                this.listEmitter.emit(this.pokemonsForMap)
+                console.log(this.pokemonsForMap)
                 console.log('type equal')
                 this.filterByType = true
               }

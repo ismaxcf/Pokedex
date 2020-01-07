@@ -7,8 +7,8 @@ import { ActivatedRoute, ParamMap } from '@angular/router'
 })
 export class PokedexComponent implements OnInit {
   mapPokemonName: string
+  listType: Array<string>
   constructor(private route: ActivatedRoute) {}
-  listType: any
 
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
@@ -27,5 +27,6 @@ export class PokedexComponent implements OnInit {
   typeChanged(event) {
     console.log('type changed')
     console.log(event)
+    this.listType = event
   }
 }
