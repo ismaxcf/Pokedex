@@ -1,0 +1,36 @@
+.main{
+    height: 100vh;
+    width: 100vw;
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-image: url("https://www.elsetge.cat/myimg/f/155-1551453_pokemon-wallpaper-starter-wallpaper-of-pokemon-contain-grass.png");
+    &--pokeballs{
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        background-size: contain;
+        background-repeat: no-repeat;
+        top: 50%;
+        height: 20%;
+        width: 100%;
+        &--pokedex{
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 10%;
+          
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png');
+        }
+        &--aboutUs{
+            height: 100%;
+           
+        width: 10%;
+        background-size: contain;
+        background-repeat: no-repeat;
+            background-image: url('https://ih0.redbubble.net/image.176426218.1831/ap,550x550,12x12,1,transparent,t.u1.png');
+        }
+    
+    }
+
+}
