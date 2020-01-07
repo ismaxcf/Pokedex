@@ -4,9 +4,9 @@
     <br />
 
     <select (change)="filterType($event.target.value)">
-      <option value="0">--All--</option>
+      <option value="All">--All--</option>
       <option *ngFor="let type of pokemonsTypeFiltered" value="{{ type.type }}">
-        <span routerLink="/pokedex/a">{{ type.type }}</span>
+        <span>{{ type.type }}</span>
       </option>
     </select>
     <select (change)="removeType($event.target.value)" class="main--typeList">
@@ -34,11 +34,14 @@
         height="30px"
         alt="pokeball"
       />
-      <div *ngIf="filterByType; else block" routerLink="/pokedex/{{ pokemon }}">
+      <div
+        *ngIf="filterByType; else block"
+        routerLink="/pokedex/{{ type }}/{{ pokemon }}"
+      >
         {{ pokemon }}
       </div>
       <ng-template #block>
-        <span routerLink="/pokedex/{{ pokemon.name }}">{{
+        <span routerLink="/pokedex/{{ type }}/{{ pokemon.name }}">{{
           pokemon.name
         }}</span></ng-template
       >
