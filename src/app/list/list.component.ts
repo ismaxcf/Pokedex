@@ -37,17 +37,13 @@ export class ListComponent implements OnInit {
           this.PokemonService.getpokemonname().subscribe(data => {
             this.pokemons = data['results']
             this.pokemonsForMap = []
-            console.log(this.pokemonsForMap)
-            console.log(this.pokemons)
           })
         }
       }
-      console.log(this.type)
       this.PokemonService.getPokemonType().subscribe(information => {
         this.pokemonTypes = information['results']
           .filter(x => x.name !== 'unknown')
           .filter(x => x.name !== 'shadow')
-        console.log(this.pokemonTypes)
 
         this.pokemonTypes.forEach(type => {
           this.PokemonService.getTypeFilteredPokemons(type['name']).subscribe(
@@ -60,20 +56,14 @@ export class ListComponent implements OnInit {
               for (let i = 0; i < aux.length; i++) {
                 typep.push(aux[i]['pokemon']['name'])
               }
-              console.log(typep)
               obj['pokemons'] = typep
               this.pokemonsTypeFiltered.push(obj)
-              console.log(this.type)
-              console.log(data)
               if (this.type === data['name']) {
                 this.pokemons = typep
                 this.pokemonsForMap = typep
                 this.listEmitter.emit(this.pokemonsForMap)
-                console.log(this.pokemonsForMap)
-                console.log('type equal')
                 this.filterByType = true
               }
-              console.log(this.pokemons)
             }
           )
         })
@@ -82,7 +72,6 @@ export class ListComponent implements OnInit {
   }
 
   filterType(filterVal: any) {
-    console.log('change type')
     this.router.navigateByUrl('/pokedex/' + filterVal)
     /*
     console.log(this.pokemonsTypeFiltered)
@@ -108,12 +97,10 @@ export class ListComponent implements OnInit {
   }
 
   removeType(filterVal: any) {
-    console.log(this.pokemons)
     let aux = this.pokemonsTypeFiltered.filter(x => x['type'] == filterVal)[0][
       'pokemons'
     ]
     let pokemonListAux = []
-    console.log(aux)
     for (let i = 0; i <= this.pokemons.length; i++) {
       if (typeof this.pokemons[i] === 'string') {
         if (aux.includes(this.pokemons[i])) {
@@ -127,6 +114,5 @@ export class ListComponent implements OnInit {
         }
       }
     }
-    console.log(this.pokemons)
   }
 }

@@ -5,7 +5,9 @@
   <div class="MapAndDetailContainer">
     <app-pokemon-display></app-pokemon-display>
     <app-pokemon-map
-      *ngIf="mapPokemonName"
+      *ngIf="
+        mapPokemonName || (mapPokemonType !== 'All' && listType.length !== 0)
+      "
       [listType]="listType"
     ></app-pokemon-map>
   </div>
