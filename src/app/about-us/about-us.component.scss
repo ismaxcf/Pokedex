@@ -1,12 +1,24 @@
 .person{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
     display: flex;
     flex-direction: column;
     align-content: space-around;
-    &--container{
-        background-color: green($color: #3dc215);
-    }
 }
-.prueba{
-    height: 2vh;
+    .person--container{
+        :hover{
+            background-color: white;
+        }
+        background-color: red;
+        border-radius: 2px;
+        width: 100%;
+        
+    }
+
+
+.linkedIn{
+    height: 4vh;
     width: 2vw;
 }

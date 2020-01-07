@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Cute+Font&display=swap" rel="stylesheet">
     <title>Home</title>
 </head>
 <body>
+    
     <div class='main'>
+        <header>Welcome to pokeAngular</header>
+        <div class='instruction'><span>Go to the pokeballs to continue</span></div>
         <div class='main--pokeballs'>
-            <div class='main--pokeballs--pokedex' routerLink='/pokedex'></div>
-            <div class='main--pokeballs--aboutUs' routerLink='/aboutUs'></div>
+            <div class='main--pokeballs--pokedex' routerLink='/pokedex'><span class='main--pokeballs--pokedex--description'>If you are a pokemon lover and you want to search for them , filter by type and by name.Do not hesitate. CLICK ON ME! </span></div>
+            <div class='main--pokeballs--aboutUs' routerLink='/aboutUs'><span class='main--pokeballs--aboutUs--description'>Here you can get some information about our developers. Click to know about us </span></div>
            
         </div>
     </div>
