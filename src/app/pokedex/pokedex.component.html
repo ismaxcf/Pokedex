@@ -3,9 +3,7 @@
     <app-list></app-list>
   </div>
   <div class="MapAndDetailContainer">
-    <app-pokemon-display
-      (emitter)="handlerPokemon($event)"
-    ></app-pokemon-display>
-    <app-pokemon-map *ngIf="mapPokemonName != undefined"></app-pokemon-map>
+    <app-pokemon-display></app-pokemon-display>
+    <app-pokemon-map *ngIf="mapPokemonName"></app-pokemon-map>
   </div>
 </div>
