@@ -1,0 +1,12 @@
+.person{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    &--container{
+        background-color: green($color: #3dc215);
+    }
+}
+.prueba{
+    height: 2vh;
+    width: 2vw;
+}
