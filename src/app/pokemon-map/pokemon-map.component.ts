@@ -17,8 +17,8 @@ export class PokemonMapComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    let options = { attributionControl: false };
-    var myMap = L.map("myMap", options).setView([40.425941, -3.56547], 6);
+    let options = { attributionControl: false, minZoom: 0.5, maxBoundsViscosity: 0.8};
+    var myMap = L.map("myMap", options).setView([40.425941, -3.56547], .5);
     var Esri_WorldImagery = L.tileLayer(
       "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
       {
@@ -27,6 +27,7 @@ export class PokemonMapComponent implements OnInit {
       }
     );
     Esri_WorldImagery.addTo(myMap);
+    myMap.setMaxBounds(myMap.getBounds())
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.name = params.get("name");
       this.pokemonService.getPokemon(this.name).subscribe(data => {
@@ -37,8 +38,9 @@ export class PokemonMapComponent implements OnInit {
         console.log("Name en el map:");
         console.log(this.name);
         myMap.remove();
-        myMap = L.map("myMap", options).setView([40.425941, -3.56547], 6);
+        myMap = L.map("myMap", options).setView([40.425941, -3.56547], 0.5);
         Esri_WorldImagery.addTo(myMap);
+        myMap.setMaxBounds(myMap.getBounds())
         for (let i = 0; i < 7; i++) {
           L.marker(this.getRandomLatLng(myMap), { icon: pokeMarker })
             .addTo(myMap)
