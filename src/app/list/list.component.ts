@@ -8,11 +8,13 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router'
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
+  @Output() listEmitter = new EventEmitter<object>()
   pokemons: Array<Object>
   pokemonTypes: Array<Object>
   pokemonsTypeFiltered: Array<Object>
   filterByType: boolean
   selectedPokemon: string
+  type: string
   constructor(
     private PokemonService: PokemonService,
     private route: ActivatedRoute,
@@ -21,9 +23,10 @@ export class ListComponent implements OnInit {
     this.selectedPokemon = ''
     this.filterByType = false
     this.pokemonsTypeFiltered = []
+    this.type = 'All'
   }
   ngOnInit() {
-    this.filterType('0')
+    //this.filterType('0')
     this.PokemonService.getpokemonname().subscribe(data => {
       this.pokemons = data['results']
       this.route.paramMap.subscribe((params: ParamMap) => {
@@ -57,10 +60,9 @@ export class ListComponent implements OnInit {
   }
 
   filterType(filterVal: any) {
-    this.router.navigateByUrl('/pokedex/' + filterVal)
     console.log(this.pokemonsTypeFiltered)
     console.log(filterVal)
-    if (filterVal == '0') {
+    if (filterVal == 'All') {
       this.PokemonService.getpokemonname().subscribe(data => {
         this.pokemons = data['results']
       })
@@ -76,6 +78,8 @@ export class ListComponent implements OnInit {
       this.filterByType = true
     }
     console.log(this.pokemons)
+    this.type = filterVal
+    this.router.navigateByUrl('/pokedex/' + filterVal)
   }
 
   removeType(filterVal: any) {
