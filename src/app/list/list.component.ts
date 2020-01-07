@@ -58,7 +58,21 @@ export class ListComponent implements OnInit {
       })
     })
   }
-
+  getRandomPokemon() {
+    let auxRandomName
+    if (this.type === 'All') {
+      console.log(Math.random() * this.pokemons.length)
+      auxRandomName = this.pokemons[
+        Math.floor(Math.random() * this.pokemons.length)
+      ]['name']
+    } else {
+      console.log(Math.random() * this.pokemons.length)
+      auxRandomName = this.pokemons[
+        Math.floor(Math.random() * this.pokemons.length)
+      ]
+    }
+    this.router.navigateByUrl(`/pokedex/${this.type}/${auxRandomName}`)
+  }
   filterType(filterVal: any) {
     console.log(this.pokemonsTypeFiltered)
     console.log(filterVal)

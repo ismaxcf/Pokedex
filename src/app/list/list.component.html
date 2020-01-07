@@ -2,7 +2,7 @@
   <div class="title">PoKeList</div>
   <div class="list--box">
     <br />
-
+    <button (click)="getRandomPokemon()">Random Pokemon</button>
     <select (change)="filterType($event.target.value)">
       <option value="All">--All--</option>
       <option *ngFor="let type of pokemonsTypeFiltered" value="{{ type.type }}">
