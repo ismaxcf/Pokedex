@@ -8,31 +8,31 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 50%;
+    width: 40%;
     height: 100%;
   }
   .MapAndDetailContainer {
     display: flex;
-    align-items: space-around;
     width: 50%;
-    height: 100%;
+    height: 90%;
     flex-direction: column;
-    margin-top: 70px;
-
+    margin-top: 60px;
+    margin-left: 100px;
     .displayContainer {
       width: 100%;
       height: 50%;
+      margin-bottom: 0px;
     }
     .map {
-      margin-top: 20px;
+      margin-top: 0px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 70px;
-      font-family: Roboto;
+      font-family: 'Roboto';
       color: white;
       width: 95%;
-      height: 30%;
+      height: 50%;
       background-color: black;
     }
   }
