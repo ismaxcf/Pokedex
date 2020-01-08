@@ -1,7 +1,7 @@
 .main {
   height: 100vh;
   width: 100vw;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   background-image: url("../../assets/155-1551453_pokemon-wallpaper-starter-wallpaper-of-pokemon-contain-grass.png");
@@ -20,7 +20,6 @@
         visibility: visible;
       }
     }
-
     animation: instruction infinite 3s 1s;
     visibility: hidden;
     display: flex;
@@ -32,9 +31,9 @@
     align-items: center;
     background-color: white;
     position: absolute;
-    top: 10%;
-    left: 16%;
-    transform: translate(-20%);
+    // top: 10%;
+    // left: 20%;
+    // transform: translate(-20%);
     text-align: center;
     height: 150px;
     width: 300px;
@@ -42,17 +41,17 @@
     border-radius: 50%;
     box-shadow: 1px 12px 33px rgba(0, 0, 0, 0.5);
 
-    &:before {
-      border: 25px solid white;
-      content: '';
-      border-left-color: transparent;
-      border-bottom-color: transparent;
-      border-right-color: transparent;
-      position: absolute;
-      bottom: -4px;
-      right: -13px;
-      transform: rotate(-42deg)
-    }
+    // &:before {
+    //   border: 25px solid white;
+    //   content: '';
+    //   border-left-color: transparent;
+    //   border-bottom-color: transparent;
+    //   border-right-color: transparent;
+    //   position: absolute;
+    //   bottom: -4px;
+    //   right: -13px;
+    //   transform: rotate(-42deg)
+    // }
   }
 
   &--pokeballs {
@@ -100,18 +99,18 @@
         transition-timing-function: ease;
         transition-delay: 0s;
 
-        &:after {
-          border: 25px solid silver;
-          content: '';
-          border-left-color: transparent;
-          border-bottom-color: transparent;
-          border-right-color: transparent;
-          position: absolute;
-          bottom: -44px;
-          right: 151px;
+        // &:after {
+        //   border: 25px solid silver;
+        //   content: '';
+        //   border-left-color: transparent;
+        //   border-bottom-color: transparent;
+        //   border-right-color: transparent;
+        //   position: absolute;
+        //   bottom: -44px;
+        //   right: 151px;
 
 
-        }
+        // }
       }
     }
 
@@ -129,16 +128,16 @@
       align-self: center;
       width: 10%;
       &--description {
-        &:after {
-          border: 25px solid silver;
-          content: '';
-          border-left-color: transparent;
-          border-bottom-color: transparent;
-          border-right-color: transparent;
-          position: absolute;
-          bottom: -44px;
-          right: 151px;
-        }
+        // &:after {
+        //   border: 25px solid silver;
+        //   content: '';
+        //   border-left-color: transparent;
+        //   border-bottom-color: transparent;
+        //   border-right-color: transparent;
+        //   position: absolute;
+        //   bottom: -44px;
+        //   right: 151px;
+        // }
 
         text-align: center;
         font-weight: bold;

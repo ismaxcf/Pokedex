@@ -6,19 +6,22 @@
     display: flex;
     flex-direction: column;
     align-content: space-around;
-}
-    .person--container{
-        :hover{
+    :hover{
             background-color: white;
         }
-        background-color: red;
+}
+    .person--container{
+        display: flex;
+        align-content: space-around;
+        
+        background-color: slateblue;
+
+        width: 200px;
         border-radius: 2px;
-        width: 100%;
         
     }
-
-
 .linkedIn{
     height: 4vh;
     width: 2vw;
+
 }
