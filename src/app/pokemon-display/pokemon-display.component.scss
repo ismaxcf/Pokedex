@@ -1,15 +1,15 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 .pokemonDisplay {
   font-size: 16px;
   animation: 2s ease-out 0s 1 loadBColor;
   width: 90%;
   height: 90%;
-  background-image: url("https://i.imgur.com/OVO67Y5.png");
+  background-image: url('https://i.imgur.com/OVO67Y5.png');
   background-color: rgba(208, 234, 233, 0.9);
   background-size: 0%;
   position: relative;
   border-radius: 20px;
-  display:flex;
+  display: flex;
   align-content: space-between;
   &__Close {
     animation: 2s ease-out 0s 1 growUp;
@@ -148,7 +148,7 @@
   padding: 30px 30px 10px 10px;
   border-radius: 10px;
 }
-.DetailsTitle{
+.DetailsTitle {
   font-family: Roboto;
   font-size: 28px;
   letter-spacing: 2px;
@@ -169,7 +169,7 @@
   text-align: justify;
   line-height: 35px;
   font-weight: 400;
-    &__Detail {
+  &__Detail {
     margin-bottom: 20px;
   }
   &__Element {
