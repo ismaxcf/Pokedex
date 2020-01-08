@@ -1,21 +1,34 @@
-import { Component, OnInit, Input } from "@angular/core";
-
+import { Component, OnInit, Input } from '@angular/core'
+import { ActivatedRoute, ParamMap } from '@angular/router'
 @Component({
-  selector: "app-pokedex",
-  templateUrl: "./pokedex.component.html",
-  styleUrls: ["./pokedex.component.scss"]
+  selector: 'app-pokedex',
+  templateUrl: './pokedex.component.html',
+  styleUrls: ['./pokedex.component.scss'],
 })
 export class PokedexComponent implements OnInit {
-  mapPokemonName: string;
-  constructor() {}
+  mapPokemonName: string
+  mapPokemonType: string
+  listType: Array<string>
+  constructor(private route: ActivatedRoute) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.mapPokemonName = params.get('name')
+      this.mapPokemonType = params.get('type')
+    })
+  }
 
   handlerPokemon(data) {
-    console.log("data:");
-    console.log(data);
-    this.mapPokemonName = data;
-    console.log("mapPokemonName:");
-    console.log(this.mapPokemonName);
+    console.log('data:')
+    console.log(data)
+    this.mapPokemonName = data
+    console.log('mapPokemonName:')
+    console.log(this.mapPokemonName)
+  }
+
+  typeChanged(event) {
+    //console.log('type changed')
+    console.log(event)
+    this.listType = event
   }
 }

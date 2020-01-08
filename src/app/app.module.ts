@@ -15,9 +15,9 @@ import { AboutUsComponent } from './about-us/about-us.component'
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'aboutUs', component: AboutUsComponent },
-  { path: 'pokedex', component: LandingpageComponent },
-  { path: 'pokedex/:name', component: LandingpageComponent },
-  { path: '', redirectTo: '/pokedex', pathMatch: 'full' },
+  { path: 'pokedex/:type', component: LandingpageComponent },
+  { path: 'pokedex/:type/:name', component: LandingpageComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 ]
 
 @NgModule({

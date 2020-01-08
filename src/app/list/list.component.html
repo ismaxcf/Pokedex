@@ -53,7 +53,7 @@
 
     <div class="main--options--buttonBlock2">
       <select (change)="filterType($event.target.value)" class="button">
-        <option value="0"> Types </option>
+        <option value="All"> All </option>
         <option
           *ngFor="let pokemons of pokemonsTypeFiltered"
           value="{{ pokemons.type }}"
@@ -85,11 +85,14 @@
         width="40px"
         height="40px"
       />
-      <div *ngIf="filterByType; else block" routerLink="/pokedex/{{ pokemon }}">
+      <div
+        *ngIf="filterByType && type !== 'All'; else block"
+        routerLink="/pokedex/{{ type }}/{{ pokemon }}"
+      >
         {{ pokemon }}
       </div>
       <ng-template #block
-        ><span routerLink="/pokedex/{{ pokemon.name }}"
+        ><span routerLink="/pokedex/{{ type }}/{{ pokemon.name }}"
           >{{ pokemon.name }}
         </span>
       </ng-template>

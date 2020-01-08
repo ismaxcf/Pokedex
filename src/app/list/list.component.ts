@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core'
 import { PokemonService } from '../pokemon.service'
-import { ActivatedRoute, ParamMap } from '@angular/router'
+import { ActivatedRoute, ParamMap, Router } from '@angular/router'
 
 @Component({
   selector: 'app-list',
@@ -8,56 +8,82 @@ import { ActivatedRoute, ParamMap } from '@angular/router'
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
+  @Output() listEmitter = new EventEmitter<any>()
   pokemons: Array<Object>
   pokemonTypes: Array<Object>
   pokemonsTypeFiltered: Array<Object>
   filterByType: boolean
   selectedPokemon: string
+  type: string
+  pokemonsForMap: Array<string>
   constructor(
     private PokemonService: PokemonService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {
     this.selectedPokemon = ''
     this.filterByType = false
     this.pokemonsTypeFiltered = []
+    this.type = 'All'
+    this.pokemonsForMap = []
   }
   ngOnInit() {
-    this.PokemonService.getpokemonname().subscribe(data => {
-      this.pokemons = data['results']
-      this.route.paramMap.subscribe((params: ParamMap) => {
-        if (params.get('name')) this.selectedPokemon = params.get('name')
-      })
-      console.log(this.pokemons)
-    })
+    //this.filterType('0')
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      if (params.get('name')) this.selectedPokemon = params.get('name')
+      if (params.get('type')) {
+        this.type = params.get('type')
+        console.log(document.querySelectorAll('#filterType'))
+        // document.querySelectorAll('#filterType')[0]['options'].map((option)=>{
+        //   if(option['value']===this.type) console.log(option)
+        // })
+        if (this.type === 'All' || !this.type) {
+          this.PokemonService.getpokemonname().subscribe(data => {
+            this.pokemons = data['results']
+            this.pokemonsForMap = []
+          })
+        }
+      }
+      this.PokemonService.getPokemonType().subscribe(information => {
+        this.pokemonTypes = information['results']
+          .filter(x => x.name !== 'unknown')
+          .filter(x => x.name !== 'shadow')
 
-    this.PokemonService.getPokemonType().subscribe(information => {
-      this.pokemonTypes = information['results']
-        .filter(x => x.name !== 'unknown')
-        .filter(x => x.name !== 'shadow')
-      console.log(this.pokemonTypes)
-
-      this.pokemonTypes.forEach(type => {
-        this.PokemonService.getTypeFilteredPokemons(type['name']).subscribe(
-          data => {
-            let aux = data['pokemon']
-            let typep = []
-            let obj = { type: data['name'] }
-            for (let i = 0; i < aux.length; i++) {
-              typep.push(aux[i]['pokemon']['name'])
+        this.pokemonTypes.forEach(type => {
+          this.PokemonService.getTypeFilteredPokemons(type['name']).subscribe(
+            data => {
+              let aux = data['pokemon']
+              let typep = []
+              let obj = {
+                type: data['name'],
+              }
+              for (let i = 0; i < aux.length; i++) {
+                typep.push(aux[i]['pokemon']['name'])
+              }
+              obj['pokemons'] = typep
+              this.pokemonsTypeFiltered.push(obj)
+              if (this.type === data['name']) {
+                this.pokemons = typep
+                this.pokemonsForMap = typep
+                this.listEmitter.emit(this.pokemonsForMap)
+                this.filterByType = true
+              }
             }
-            obj['pokemons'] = typep
-            this.pokemonsTypeFiltered.push(obj)
-            console.log(this.pokemonsTypeFiltered)
-          }
-        )
+          )
+        })
       })
     })
   }
 
   filterType(filterVal: any) {
+    this.router.navigateByUrl('/pokedex/' + filterVal)
+    setTimeout(() => {
+      window.location.reload()
+    }, 100)
+    /*
     console.log(this.pokemonsTypeFiltered)
     console.log(filterVal)
-    if (filterVal == '0') {
+    if (filterVal == 'All') {
       this.PokemonService.getpokemonname().subscribe(data => {
         this.pokemons = data['results']
       })
@@ -73,15 +99,15 @@ export class ListComponent implements OnInit {
       this.filterByType = true
     }
     console.log(this.pokemons)
+    this.type = filterVal
+   */
   }
 
   removeType(filterVal: any) {
-    console.log(this.pokemons)
     let aux = this.pokemonsTypeFiltered.filter(x => x['type'] == filterVal)[0][
       'pokemons'
     ]
     let pokemonListAux = []
-    console.log(aux)
     for (let i = 0; i <= this.pokemons.length; i++) {
       if (typeof this.pokemons[i] === 'string') {
         if (aux.includes(this.pokemons[i])) {
@@ -95,6 +121,5 @@ export class ListComponent implements OnInit {
         }
       }
     }
-    console.log(this.pokemons)
   }
 }

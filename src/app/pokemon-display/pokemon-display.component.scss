@@ -1,14 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 .pokemonDisplay {
   font-size: 16px;
   animation: 2s ease-out 0s 1 loadBColor;
   width: 90%;
-  height: 100%;
-  background-image: url("https://i.imgur.com/OVO67Y5.png");
-  background-color: rgba(208, 234, 233, 0.8);
+  height: 90%;
+  background-image: url('https://i.imgur.com/OVO67Y5.png');
+  background-color: rgba(208, 234, 233, 0.9);
   background-size: 0%;
   position: relative;
   border-radius: 20px;
-
+  display: flex;
+  align-content: space-between;
   &__Close {
     animation: 2s ease-out 0s 1 growUp;
     width: 3rem;
@@ -79,86 +81,112 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-items: center;
-  // justify-content: center;
+  justify-items: space-around;
   flex-wrap: scroll;
-  // padding-left: 20%;
   width: 100%;
-  height: 90%;
-  padding-bottom: 2%;
+  height: 80%;
+  margin: 4%;
+  letter-spacing: 10px;
   overflow: auto;
-
   &__Name {
-    color: black;
-    font-family: Roboto;
+    display: flex;
+    align-content: center;
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
     font-weight: 1000;
-    padding-top: 2rem;
-    // padding-bottom: 0.5rem;
+    padding: 20px 30px;
     text-align: center;
     text-transform: uppercase;
     font-size: 40px;
     animation: 2s ease-out 0s 1 growUp;
-    letter-spacing: 1px;
     margin-bottom: 1rem;
   }
 }
-
 .PokemonPhotosContainer {
-  // width: 100%;
-  margin: 10px 0px 20px 0px;
+  width: 80%;
+  margin: 15px 0px 10px 160px;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   align-content: center;
+  align-items: center;
+  letter-spacing: 1px;
   &__Sprite {
-    height: 150px;
+    height: 200px;
   }
   &__Menu {
-    width: 100px;
-    height: 40px;
+    width: 450px;
+    height: 80px;
     display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin-bottom: 30px;
+    flex-direction: row;
     margin-left: 55px;
   }
   &__Option {
-    width: 130px;
-    height: 30px;
+    width: 140px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    font-family: Calibri;
+    font-family: 'Roboto', sans-serif;
     cursor: pointer;
-    display: inline-block;
-    padding: 0.4rem 0.6rem 0.6rem 0.6rem;
-    font-size: 16px;
+    padding: 0.3rem 0.7rem 0.3rem 0.7rem;
+    font-size: 20px;
     background-color: grey;
     color: white;
     border-radius: 8px;
-    &:not(:last-child) {
-      margin-bottom: 5px;
-    }
+    margin-right: 20px;
+    border: 0.5px solid white;
   }
 }
-
 .PokemonDataContainer {
-  margin-left: 160px;
+  margin-left: 65px;
+  background-color: rgba(255, 250, 250, 0.8);
+  padding: 30px 30px 10px 10px;
+  border-radius: 10px;
 }
-
-.DetailsList {
-  list-style: none;
-  font-size: 1.1rem;
-  border: 1px solid black;
-  border-radius: 8px;
-  width: 70%;
-  height: auto;
+.DetailsTitle {
+  font-family: Roboto;
+  font-size: 28px;
+  letter-spacing: 2px;
   font-weight: bold;
-  font-family: Calibri;
-  font-size: 22px;
-  padding: 30px 20px 30px 30px;
+  display: flex;
+  justify-content: center;
+  color: black;
+}
+.DetailsList {
+  width: 700px;
+  height: 200px;
+  font-family: Roboto;
+  letter-spacing: 1px;
+  font-size: 26px;
+  padding: 10px 20px 10px 30px;
+  overflow: auto;
+  text-align: justify;
+  line-height: 35px;
+  font-weight: 400;
   &__Detail {
-    margin-bottom: 1rem;
+    margin-bottom: 20px;
   }
   &__Element {
+    font-weight: none;
     margin-right: 0.1rem;
     text-transform: capitalize;
   }
+}
+.DetailsList::-webkit-scrollbar {
+  width: 20px;
+  background: lightgrey;
+}
+.DetailsList::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px lightgrey;
+  border-radius: 10px;
+}
+.DetailsList::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 10px;
+}
+.DetailsList::-webkit-scrollbar-thumb:hover {
+  background: lightgrey;
 }
