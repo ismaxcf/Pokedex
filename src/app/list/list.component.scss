@@ -1,11 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins|Roboto&display=swap");
 .main {
-  margin-left: -250px;
-  margin-top: 70px;
+  margin-left: -50px;
+  margin-top: 35px;
   background-color: white;
-  // background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cd85dd3e-7bb0-4f58-a1e1-053a7763cd84/d84tnc4-221c208f-fcfa-48f6-8320-128ba4b1d1c2.png/v1/fill/w_1024,h_1697,strp/nintendo_game_boy_vector_by_cryoganix_d84tnc4-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTY5NyIsInBhdGgiOiJcL2ZcL2NkODVkZDNlLTdiYjAtNGY1OC1hMWUxLTA1M2E3NzYzY2Q4NFwvZDg0dG5jNC0yMjFjMjA4Zi1mY2ZhLTQ4ZjYtODMyMC0xMjhiYTRiMWQxYzIucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.9gCGU3cqmi9dUtqJZGH0g6RSoP4ceT6fNhflerWPnvA");
   background-size: cover;
-  width: 25%;
+  width: 30%;
   height: 1300px;
   max-height: 100%;
   font-family: 'Roboto';
@@ -13,25 +12,25 @@
   border-radius: 23px;
   box-sizing: content-box;
   position: absolute;
-  font-size: 30px;
+  font-size: 15px;
   cursor: pointer;
   &--options {
     margin: 0% 5% 0% 6%;
     width: 100%;
     color: white;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     &--title {
         font-family: 'Roboto', sans-serif;
-        height: 90px;
+        height: 45px;
         width: 90%;
-        font-size: 50px;
+        font-size: 25px;
         background-color: black;
         border-radius: 10px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 15px 0px;
+        padding: 5px 0px;
         letter-spacing: 2px;
     }
     &--buttonBlock1 {
@@ -41,11 +40,11 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      height: 50px;
+      height: 100%;
       width: 75%;
-      padding: 25px 50px 10px 50px;
+      padding: 12.5px 20px 5px 25px;
       &--titleButton {
-        font-size: 30px;
+        font-size: 15px;
         letter-spacing: 1px;
         display: flex; 
         align-items: center;
@@ -58,7 +57,7 @@
         align-items: center;
         height: 100%;
         width: 75%;
-        padding: 10px 50px 20px 50px;
+        padding: 5px 25px 10px 20px;
         margin-bottom: 10px;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
@@ -68,13 +67,13 @@
     box-sizing: content-box;
     border-radius: 10px;
     background-color:white;
-    height: 900px;
+    height: 460px;
     width: 90%;
     overflow: auto;
     margin: auto;
     margin-top: 10px;
     &--item {
-      margin: 10px 50px 10px 50px;
+      margin: 5px 25px 5px 25px;
       background-color: lightgrey;
       border-radius: 10px;
       display: flex;
@@ -84,7 +83,7 @@
       letter-spacing: 1px;
       cursor: pointer;
       &--logo {
-        margin: 0px 15px 0px 15px;
+        margin: 0px 7px 0px 7px;
       }
     }
     &--selected {
@@ -94,12 +93,12 @@
 }
 
 .button{
-    font-family: Roboto;
+    font-family: 'Roboto';
     letter-spacing: 1px;
-    font-size: 26px;
-    height: 50px;
-    width: 200px;
-    padding: 5px 0px 5px 45px;
+    font-size: 13px;
+    height: 25px;
+    width: 100px;
+    padding: 3px 0px 3px 22px;
     border-radius: 8px;
     background-color: white;
     color: black;
@@ -108,12 +107,12 @@
 
 .form-control{
 padding: 5px;
-width: 300px;
-font-size: 24px; 
+width: 150px;
+font-size: 12px; 
 }
 
 .main--listBlock::-webkit-scrollbar {
-  width: 20px;
+  width: 10px;
   background: lightgrey;
 }
 
@@ -131,5 +130,5 @@ font-size: 24px;
   background: lightgrey;
 }
 .icon{
-    margin-right: 10px;
+    margin-right: 5px;
 }

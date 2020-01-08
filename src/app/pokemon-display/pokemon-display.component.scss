@@ -3,7 +3,7 @@
   font-size: 16px;
   animation: 2s ease-out 0s 1 loadBColor;
   width: 90%;
-  height: 100%;
+  height: 90%;
   background-image: url("https://i.imgur.com/OVO67Y5.png");
   background-color: rgba(208, 234, 233, 0.9);
   background-size: 0%;
@@ -85,7 +85,7 @@
   justify-items: space-around;
   flex-wrap: scroll;
   width: 100%;
-  height: 600px;
+  height: 80%;
   margin: 4%;
   letter-spacing: 10px;
   overflow: auto;
@@ -110,6 +110,7 @@
   width: 80%;
   margin: 15px 0px 10px 160px;
   display: flex;
+  justify-content: center;
   align-content: center;
   align-items: center;
   letter-spacing: 1px;
