@@ -1,0 +1,374 @@
+header {
+  text-align: center;
+  font-weight: bold;
+  font-size: xx-large;
+  font-family: 'Cute Font', cursive;
+  background-color: tomato;
+}
+.main {
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: black;
+
+  &--pokeballs {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 20%;
+    width: 100%;
+    top: 50%;
+
+    &--instruction {
+      @keyframes instruction {
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      animation: instruction 3s infinite;
+      opacity: 0;
+      display: flex;
+      text-align: center;
+      font-weight: bold;
+      font-size: xx-large;
+      font-family: 'Cute Font', cursive;
+      justify-content: center;
+      align-items: center;
+      background-color: silver;
+      text-align: center;
+      height: 150px;
+      width: 300px;
+      border-radius: 50%;
+      box-shadow: 1px 12px 33px rgba(0, 0, 0, 0.5);
+    }
+
+    &--pokedex {
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 100%;
+      align-self: center;
+      width: 10%;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png');
+
+      &:hover {
+        .main--pokeballs--pokedex--description {
+          display: block;
+        }
+      }
+
+      &--description {
+        text-align: center;
+        font-weight: bold;
+        font-size: medium;
+        font-family: 'Cute Font', cursive;
+        padding: 5px 0;
+        display: none;
+        color: black;
+        position: absolute;
+        left: 14%;
+        top: -51%;
+        width: 25%;
+        text-align: center;
+        border-radius: 6px;
+        background-color: silver;
+        transition-property: opacity;
+        transition-duration: 0.6s;
+        transition-timing-function: ease;
+        transition-delay: 0s;
+      }
+    }
+
+    &--aboutUs {
+      &:hover {
+        .main--pokeballs--aboutUs--description {
+          display: block;
+        }
+      }
+
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url('../../assets/circle-cropped.png');
+      height: 100%;
+      align-self: center;
+      width: 10%;
+
+      &--description {
+        text-align: center;
+        font-weight: bold;
+        font-size: medium;
+        font-family: 'Cute Font', cursive;
+        padding: 5px 0;
+        display: none;
+        color: black;
+        position: absolute;
+        top: -52%;
+        right: 11%;
+        width: 25%;
+        text-align: center;
+        border-radius: 6px;
+        background-color: silver;
+        transition-property: opacity;
+        transition-duration: 0.6s;
+        transition-timing-function: ease;
+        transition-delay: 0s;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 414px) {
+  .main {
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    //background-image: url("../../assets/155-1551453_pokemon-wallpaper-starter-wallpaper-of-pokemon-contain-grass.png");
+    background-color: black;
+    &--pokeballs {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-content: space-around;
+      top: 50%;
+      height: 20%;
+      width: 100%;
+
+      &--instruction {
+        order: 1;
+        margin: auto;
+        display: flex;
+        text-align: center;
+        font-weight: bold;
+        font-size: x-large;
+        font-family: 'Cute Font', cursive;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        background-color: white;
+        text-align: center;
+        margin-bottom: 3%;
+        width: 76%;
+        height: 20%;
+        border-radius: 50%;
+        box-shadow: 1px 12px 33px rgba(0, 0, 0, 0.5);
+      }
+
+      &--pokedex {
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 100%;
+        align-self: center;
+        width: 10%;
+        // order: 2;
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png');
+
+        &--description {
+          @keyframes description {
+            50% {
+              opacity: 1;
+            }
+            100% {
+              opacity: 0;
+            }
+          }
+
+          animation: description 3s infinite;
+          opacity: 0;
+          display: block;
+          text-align: center;
+          font-weight: bold;
+          font-size: medium;
+          font-family: 'Cute Font', cursive;
+          padding: 5px 0;
+          color: black;
+          position: absolute;
+          // left: 14%;
+          top: -34%;
+          width: 75%;
+          text-align: center;
+          border-radius: 6px;
+          background-color: silver;
+          transition-property: opacity;
+          transition-duration: 0.6s;
+          transition-timing-function: ease;
+          transition-delay: 0s;
+        }
+      }
+
+      &--aboutUs {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('../../assets/circle-cropped.png');
+        height: 100%;
+        order: 3;
+        align-self: center;
+        width: 10%;
+        &--description {
+          &--description {
+            @keyframes description {
+              50% {
+                opacity: 1;
+              }
+              100% {
+                opacity: 0;
+              }
+            }
+          }
+
+          animation: description 3s infinite;
+          opacity: 0;
+          text-align: center;
+          font-weight: bold;
+          font-size: medium;
+          font-family: 'Cute Font', cursive;
+          padding: 5px 0;
+          display: block;
+          color: black;
+          position: absolute;
+          top: 97%;
+          width: 75%;
+          text-align: center;
+          border-radius: 6px;
+          background-color: silver;
+          transition-property: opacity;
+          transition-duration: 0.6s;
+          transition-timing-function: ease;
+          transition-delay: 0s;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .main {
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: black;
+    //background-image: url("../../assets/155-1551453_pokemon-wallpaper-starter-wallpaper-of-pokemon-contain-grass.png");
+
+    &--pokeballs {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-content: space-around;
+      top: 50%;
+      height: 20%;
+      width: 100%;
+
+      &--instruction {
+        order: 1;
+        margin: auto;
+        display: flex;
+        text-align: center;
+        font-weight: bold;
+        font-size: x-large;
+        font-family: 'Cute Font', cursive;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        background-color: white;
+        text-align: center;
+        margin-bottom: 3%;
+        width: 76%;
+        height: 20%;
+        border-radius: 50%;
+        box-shadow: 1px 12px 33px rgba(0, 0, 0, 0.5);
+      }
+
+      &--pokedex {
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 100%;
+        align-self: center;
+        width: 10%;
+        // order: 2;
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png');
+
+        &--description {
+          @keyframes description {
+            50% {
+              opacity: 1;
+            }
+            100% {
+              opacity: 0;
+            }
+          }
+
+          animation: description 3s infinite;
+          opacity: 0;
+          display: block;
+          text-align: center;
+          font-weight: bold;
+          font-size: medium;
+          font-family: 'Cute Font', cursive;
+          padding: 5px 0;
+          color: black;
+          position: absolute;
+          // left: 14%;
+          top: -34%;
+          width: 75%;
+          text-align: center;
+          border-radius: 6px;
+          background-color: silver;
+          transition-property: opacity;
+          transition-duration: 0.6s;
+          transition-timing-function: ease;
+          transition-delay: 0s;
+        }
+      }
+
+      &--aboutUs {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('../../assets/circle-cropped.png');
+        height: 100%;
+        order: 3;
+        align-self: center;
+        width: 10%;
+        &--description {
+          &--description {
+            @keyframes description {
+              50% {
+                opacity: 1;
+              }
+              100% {
+                opacity: 0;
+              }
+            }
+          }
+
+          animation: description 3s infinite;
+          opacity: 0;
+          text-align: center;
+          font-weight: bold;
+          font-size: medium;
+          font-family: 'Cute Font', cursive;
+          padding: 5px 0;
+          display: block;
+          color: black;
+          position: absolute;
+          top: 97%;
+          width: 75%;
+          text-align: center;
+          border-radius: 6px;
+          background-color: silver;
+          transition-property: opacity;
+          transition-duration: 0.6s;
+          transition-timing-function: ease;
+          transition-delay: 0s;
+        }
+      }
+    }
+  }
+}

@@ -1,8 +1,8 @@
 @import '~leaflet/dist/leaflet.css';
 .mapContainer {
-  margin-top: 25px;
-  width: 95%;
-  height: 650px;
+  margin: 25px 0px 25px 0px;
+  width: 80%;
+  height: 90%;
   background-color: white;
   border-radius: 20px;
   display: flex;
@@ -31,10 +31,9 @@
 .icon {
   margin-right: 20px;
 }
-
 #myMap {
-  top: 30px;
+  top: 10px;
   margin: 0% 5% 5% 5%;
   width: auto;
-  height: 500px;
+  height: 250px;
 }

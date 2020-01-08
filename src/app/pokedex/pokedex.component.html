@@ -1,11 +1,14 @@
 <div class="pokedexContainer">
   <div class="listContainer">
-    <app-list></app-list>
+    <app-list (listEmitter)="typeChanged($event)"></app-list>
   </div>
   <div class="MapAndDetailContainer">
-    <app-pokemon-display
-      (emitter)="handlerPokemon($event)"
-    ></app-pokemon-display>
-    <app-pokemon-map *ngIf="mapPokemonName != undefined"></app-pokemon-map>
+    <app-pokemon-display></app-pokemon-display>
+    <app-pokemon-map
+      *ngIf="
+        mapPokemonName || (mapPokemonType !== 'All' && listType.length !== 0)
+      "
+      [listType]="listType"
+    ></app-pokemon-map>
   </div>
 </div>
