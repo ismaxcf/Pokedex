@@ -33,6 +33,10 @@ export class ListComponent implements OnInit {
       if (params.get('name')) this.selectedPokemon = params.get('name')
       if (params.get('type')) {
         this.type = params.get('type')
+        console.log(document.querySelectorAll('#filterType'))
+        // document.querySelectorAll('#filterType')[0]['options'].map((option)=>{
+        //   if(option['value']===this.type) console.log(option)
+        // })
         if (this.type === 'All' || !this.type) {
           this.PokemonService.getpokemonname().subscribe(data => {
             this.pokemons = data['results']

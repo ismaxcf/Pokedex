@@ -3,7 +3,7 @@
   <div class="list--box">
     <br />
 
-    <select (change)="filterType($event.target.value)">
+    <select id="filterType" (change)="filterType($event.target.value)">
       <option value="All">--All--</option>
       <option *ngFor="let type of pokemonsTypeFiltered" value="{{ type.type }}">
         <span>{{ type.type }}</span>
