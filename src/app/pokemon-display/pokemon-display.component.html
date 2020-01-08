@@ -17,7 +17,9 @@
 
   <div class="PokemonContainer">
     <h2 class="PokemonContainer__Name">
-      <span>#{{ this.pokemon.id }} - </span>{{ this.pokemon.name }}
+      <!-- <span>#{{ this.pokemon.id }}- </span>  -->
+
+      {{ this.pokemon.name }}
     </h2>
 
     <div class="PokemonPhotosContainer">
@@ -44,6 +46,7 @@
     </div>
 
     <div class="PokemonDataContainer">
+      <div class="DetailsTitle">+ DETAILS</div>
       <ul class="DetailsList">
         <li class="DetailsList__Detail">
           Type:
