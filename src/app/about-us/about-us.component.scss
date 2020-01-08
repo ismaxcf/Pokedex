@@ -1,0 +1,71 @@
+.person {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  :hover {
+    background-color: white;
+  }
+
+&--container {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  align-items: center;
+  width: 200px;
+  border-radius: 2px;
+  .name{
+      cursor: default;
+  }
+
+  .avatar {
+    width: 109px;
+    height: 109px;
+    background-color: brown;
+    border-radius: 50%;
+  }
+  .linkedIn {
+    width: 2vw;
+    cursor: pointer;
+  }
+}
+}
+@media only screen and (max-width: 414px) {
+    .person {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-wrap: wrap;
+        :hover {
+          background-color: white;
+        }
+        &--container {
+            display: flex;
+            flex-direction: column;
+            align-content: space-around;
+            align-items: center;
+            width: 200px;
+            border-radius: 2px;
+            .name{
+                cursor: default;
+                text-align: center;
+            }
+          
+            .avatar {
+              width: 109px;
+              height: 109px;
+              background-color: brown;
+              border-radius: 50%;
+            }
+            .linkedIn {
+              width: 2vw;
+              cursor: pointer;
+            }
+          }
+    }
+}

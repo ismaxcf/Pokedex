@@ -10,12 +10,14 @@ import { HttpClientModule } from '@angular/common/http'
 import { PokedexComponent } from './pokedex/pokedex.component'
 import { TypeFilteredPipe } from './list/type-filter.pipe'
 import { PokemonMapComponent } from './pokemon-map/pokemon-map.component'
-
+import { HomeComponent } from './home/home.component'
+import { AboutUsComponent } from './about-us/about-us.component'
 const appRoutes: Routes = [
-  //{ path: 'pokedex', component: LandingpageComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'aboutUs', component: AboutUsComponent },
   { path: 'pokedex/:type', component: LandingpageComponent },
   { path: 'pokedex/:type/:name', component: LandingpageComponent },
-  { path: '', redirectTo: '/pokedex/All', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 ]
 
 @NgModule({
@@ -27,6 +29,8 @@ const appRoutes: Routes = [
     PokedexComponent,
     TypeFilteredPipe,
     PokemonMapComponent,
+    HomeComponent,
+    AboutUsComponent,
   ],
   imports: [
     BrowserModule,
