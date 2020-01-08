@@ -1,10 +1,40 @@
-@import "~leaflet/dist/leaflet.css";
+@import '~leaflet/dist/leaflet.css';
 .mapContainer {
+  margin-top: 25px;
   width: 95%;
-  height: 100%;
+  height: 650px;
   background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  &--header {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 3px;
+    &--text {
+      background-color: grey;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      color: white;
+      width: 90%;
+      height: 70px;
+      font-family: Roboto;
+      font-size: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+.icon {
+  margin-right: 20px;
 }
 #myMap {
+  top: 30px;
+  margin: 0% 5% 5% 5%;
   width: auto;
-  height: 300px;
+  height: 500px;
 }

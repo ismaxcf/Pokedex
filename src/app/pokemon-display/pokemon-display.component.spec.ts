@@ -1,16 +1,16 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { PokemonDisplayComponent } from "./pokemon-display.component";
+import { PokemonDisplayComponent } from './pokemon-display.component'
 
-describe("PokemonDisplayComponent", () => {
-  let component: PokemonDisplayComponent;
-  let fixture: ComponentFixture<PokemonDisplayComponent>;
+describe('PokemonDisplayComponent', () => {
+  let component: PokemonDisplayComponent
+  let fixture: ComponentFixture<PokemonDisplayComponent>
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [PokemonDisplayComponent]
-    }).compileComponents();
-  }));
+      declarations: [PokemonDisplayComponent],
+    }).compileComponents()
+  }))
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PokemonDisplayComponent)
@@ -18,7 +18,7 @@ describe("PokemonDisplayComponent", () => {
     fixture.detectChanges()
   })
 
-  it("should create", () => {
-    expect(component).toBeTruthy();
-  });
-});
+  it('should create', () => {
+    expect(component).toBeTruthy()
+  })
+})
