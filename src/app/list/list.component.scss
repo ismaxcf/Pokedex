@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins|Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Poppins|Roboto&display=swap');
 .main {
-  margin-left: -50px;
+  margin-left: -150px;
   margin-top: 35px;
   background-color: white;
   background-size: cover;
@@ -20,18 +20,18 @@
     color: white;
     margin-bottom: 15px;
     &--title {
-        font-family: 'Roboto', sans-serif;
-        height: 45px;
-        width: 90%;
-        font-size: 25px;
-        background-color: black;
-        border-radius: 10px;
-        margin-bottom: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 5px 0px;
-        letter-spacing: 2px;
+      font-family: 'Roboto', sans-serif;
+      height: 45px;
+      width: 90%;
+      font-size: 25px;
+      background-color: black;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px 0px;
+      letter-spacing: 2px;
     }
     &--buttonBlock1 {
       background-color: red;
@@ -46,27 +46,27 @@
       &--titleButton {
         font-size: 15px;
         letter-spacing: 1px;
-        display: flex; 
+        display: flex;
         align-items: center;
       }
     }
     &--buttonBlock2 {
-        background-color: red;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        height: 100%;
-        width: 75%;
-        padding: 5px 25px 10px 20px;
-        margin-bottom: 10px;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-      }
+      background-color: red;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 100%;
+      width: 75%;
+      padding: 5px 25px 10px 20px;
+      margin-bottom: 10px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
   }
   &--listBlock {
     box-sizing: content-box;
     border-radius: 10px;
-    background-color:white;
+    background-color: white;
     height: 460px;
     width: 90%;
     overflow: auto;
@@ -92,23 +92,22 @@
   }
 }
 
-.button{
-    font-family: 'Roboto';
-    letter-spacing: 1px;
-    font-size: 13px;
-    height: 25px;
-    width: 100px;
-    padding: 3px 0px 3px 22px;
-    border-radius: 8px;
-    background-color: white;
-    color: black;
-    
-  }
+.button {
+  font-family: 'Roboto';
+  letter-spacing: 1px;
+  font-size: 13px;
+  height: 25px;
+  width: 100px;
+  padding: 3px 0px 3px 22px;
+  border-radius: 8px;
+  background-color: white;
+  color: black;
+}
 
-.form-control{
-padding: 5px;
-width: 150px;
-font-size: 12px; 
+.form-control {
+  padding: 5px;
+  width: 150px;
+  font-size: 12px;
 }
 
 .main--listBlock::-webkit-scrollbar {
@@ -129,6 +128,6 @@ font-size: 12px;
 .main--listBlock::-webkit-scrollbar-thumb:hover {
   background: lightgrey;
 }
-.icon{
-    margin-right: 5px;
+.icon {
+  margin-right: 5px;
 }
