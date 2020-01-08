@@ -11,14 +11,13 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border: 5px solid black;
   align-items: center;
   .logo-left {
     width: 10%;
     height: 50%;
     svg {
-      height: 90%;
-      width: 90%;
+      height: 100%;
+      width: 100%;
       object-fit: scale-down;
     }
   }
@@ -35,25 +34,25 @@ header {
     width: 38%;
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    font-size: 120px;
+    font-size: 60px;
     font-weight: 600;
     letter-spacing: 20px;
     margin: 0% 0% 0% 0%;
     color: white;
-    text-shadow: 2px 2px 0 black, -2px 2px 0 black, 2px -2px 0 black,
-      -2px -2px 0 black, 0px 2px 0 black, 0px -2px 0 black, -2px 0px 0 black,
-      2px 0px 0 black, 3px 3px 0 black, -3px 3px 0 black, 3px -3px 0 black,
-      -3px -3px 0 black, 0px 3px 0 black, 0px -3px 0 black, -3px 0px 0 black,
-      3px 0px 0 black, 2px 3px 0 black, -2px 3px 0 black, 2px -3px 0 black,
-      -2px -3px 0 black, 3px 2px 0 black, -3px 2px 0 black, 3px -2px 0 black,
-      -3px -2px 0 black;
+    // text-shadow: 2px 2px 0 black, -2px 2px 0 black, 2px -2px 0 black,
+    //   -2px -2px 0 black, 0px 2px 0 black, 0px -2px 0 black, -2px 0px 0 black,
+    //   2px 0px 0 black, 3px 3px 0 black, -3px 3px 0 black, 3px -3px 0 black,
+    //   -3px -3px 0 black, 0px 3px 0 black, 0px -3px 0 black, -3px 0px 0 black,
+    //   3px 0px 0 black, 2px 3px 0 black, -2px 3px 0 black, 2px -3px 0 black,
+    //   -2px -3px 0 black, 3px 2px 0 black, -3px 2px 0 black, 3px -2px 0 black,
+    //   -3px -2px 0 black;
   }
   .logo-right {
     width: 10%;
     height: 50%;
     svg {
-      height: 90%;
-      width: 90%;
+      height: 100%;
+      width: 100%;
       object-fit: scale-down;
     }
   }
@@ -71,7 +70,7 @@ main {
 }
 footer {
   font-family: calibri;
-  font-size: 30px;
+  font-size: 15px;
   height: 5%;
   width: 100%;
   background-color: gray;

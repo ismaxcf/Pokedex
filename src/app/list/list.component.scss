@@ -1,37 +1,36 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins|Roboto&display=swap');
 .main {
-  margin-left: -250px;
-  margin-top: 70px;
+  margin-left: -150px;
+  margin-top: 35px;
   background-color: white;
   background-size: cover;
-  width: 25%;
-  height: 80%;
+  width: 30%;
+  height: 650px;
   max-height: 100%;
   font-family: 'Roboto';
   border: 5px solid black;
   border-radius: 23px;
   box-sizing: content-box;
   position: absolute;
-  font-size: 30px;
+  font-size: 15px;
   cursor: pointer;
   &--options {
-    // margin: 0% 5% 0% 6%;
+    margin: 0% 5% 0% 6%;
     width: 100%;
     color: white;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     &--title {
-      margin-left: 5%;
       font-family: 'Roboto', sans-serif;
-      height: 90px;
+      height: 45px;
       width: 90%;
-      font-size: 50px;
+      font-size: 25px;
       background-color: black;
       border-radius: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 15px 0px;
+      padding: 5px 0px;
       letter-spacing: 2px;
     }
     &--buttonBlock1 {
@@ -41,11 +40,11 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      height: 20%;
-      width: 100%;
-      padding: 25px 50px 10px 50px;
+      height: 100%;
+      width: 75%;
+      padding: 12.5px 20px 5px 25px;
       &--titleButton {
-        font-size: 30px;
+        font-size: 15px;
         letter-spacing: 1px;
         display: flex;
         align-items: center;
@@ -56,9 +55,9 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      height: 20%;
+      height: 100%;
       width: 75%;
-      padding: 10px 50px 20px 50px;
+      padding: 5px 25px 10px 20px;
       margin-bottom: 10px;
       border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
@@ -68,13 +67,13 @@
     box-sizing: content-box;
     border-radius: 10px;
     background-color: white;
-    height: 60%;
+    height: 460px;
     width: 90%;
     overflow: auto;
     margin: auto;
     margin-top: 10px;
     &--item {
-      margin: 10px 50px 10px 50px;
+      margin: 5px 25px 5px 25px;
       background-color: lightgrey;
       border-radius: 10px;
       display: flex;
@@ -84,7 +83,7 @@
       letter-spacing: 1px;
       cursor: pointer;
       &--logo {
-        margin: 0px 15px 0px 15px;
+        margin: 0px 7px 0px 7px;
       }
     }
     &--selected {
@@ -92,26 +91,30 @@
     }
   }
 }
+
 .button {
-  font-family: Roboto;
+  font-family: 'Roboto';
   letter-spacing: 1px;
-  font-size: 26px;
-  height: 50px;
-  width: 200px;
-  padding: 5px 0px 5px 45px;
+  font-size: 13px;
+  height: 25px;
+  width: 100px;
+  padding: 3px 0px 3px 22px;
   border-radius: 8px;
   background-color: white;
   color: black;
 }
+
 .form-control {
   padding: 5px;
-  width: 300px;
-  font-size: 24px;
+  width: 150px;
+  font-size: 12px;
 }
+
 .main--listBlock::-webkit-scrollbar {
-  width: 20px;
+  width: 10px;
   background: lightgrey;
 }
+
 .main--listBlock::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px lightgrey;
   border-radius: 10px;
@@ -124,5 +127,5 @@
   background: lightgrey;
 }
 .icon {
-  margin-right: 10px;
+  margin-right: 5px;
 }
