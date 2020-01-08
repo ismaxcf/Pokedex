@@ -61,7 +61,8 @@ header {
   }
 }
 main {
-  height: 80%;
+  min-height: 80%;
+  height: auto;
   width: 100%;
   background-image: 
   linear-gradient(
