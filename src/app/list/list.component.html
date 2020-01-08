@@ -35,7 +35,7 @@
         alt="pokeball"
       />
       <div
-        *ngIf="filterByType; else block"
+        *ngIf="filterByType && type !== 'All'; else block"
         routerLink="/pokedex/{{ type }}/{{ pokemon }}"
       >
         {{ pokemon }}

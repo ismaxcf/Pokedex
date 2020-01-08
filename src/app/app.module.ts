@@ -12,10 +12,10 @@ import { TypeFilteredPipe } from './list/type-filter.pipe'
 import { PokemonMapComponent } from './pokemon-map/pokemon-map.component'
 
 const appRoutes: Routes = [
-  { path: 'pokedex', component: LandingpageComponent },
+  //{ path: 'pokedex', component: LandingpageComponent },
   { path: 'pokedex/:type', component: LandingpageComponent },
   { path: 'pokedex/:type/:name', component: LandingpageComponent },
-  { path: '', redirectTo: '/pokedex', pathMatch: 'full' },
+  { path: '', redirectTo: '/pokedex/All', pathMatch: 'full' },
 ]
 
 @NgModule({

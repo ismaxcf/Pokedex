@@ -73,6 +73,9 @@ export class ListComponent implements OnInit {
 
   filterType(filterVal: any) {
     this.router.navigateByUrl('/pokedex/' + filterVal)
+    setTimeout(() => {
+      window.location.reload()
+    }, 100)
     /*
     console.log(this.pokemonsTypeFiltered)
     console.log(filterVal)

@@ -19,8 +19,12 @@ export class PokemonMapComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    let options = { attributionControl: false }
-    var myMap = L.map('myMap', options).setView([40.425941, -3.56547], 5)
+    let options = {
+      attributionControl: false,
+      minZoom: 0.5,
+      maxBoundsViscosity: 0.8,
+    }
+    var myMap = L.map('myMap', options).setView([40.425941, -3.56547], 0.8)
     var Esri_WorldImagery = L.tileLayer(
       'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
       {
@@ -29,38 +33,26 @@ export class PokemonMapComponent implements OnInit {
       }
     )
     Esri_WorldImagery.addTo(myMap)
+    myMap.setMaxBounds(myMap.getBounds())
     this.route.paramMap.subscribe((params: ParamMap) => {
-      console.log(this.listType)
       this.name = params.get('name')
       this.type = params.get('type')
-      console.log(this.name)
-      console.log(this.type)
       if (this.name) {
-        console.log('IF')
         this.pokemonService.getPokemon(this.name).subscribe(data => {
           var pokeMarker = L.icon({
             iconUrl: data['sprites'].front_default,
             iconSize: [80, 90],
           })
           myMap.remove()
-          myMap = L.map('myMap', options).setView([40.425941, -3.56547], 5)
+          myMap = L.map('myMap', options).setView([40.425941, -3.56547], 0.8)
           Esri_WorldImagery.addTo(myMap)
-          for (let i = 0; i < 1; i++) {
-            L.marker(this.getRandomLatLng(myMap), { icon: pokeMarker })
-              .addTo(myMap)
-              .bindPopup(this.name)
-          }
+          myMap.setMaxBounds(myMap.getBounds())
+          L.marker(this.getRandomLatLng(myMap), { icon: pokeMarker })
+            .addTo(myMap)
+            .bindPopup(this.name)
         })
       } else if (this.type !== 'All' && this.listType.length !== 0) {
-        console.log('ELSE')
-        console.log('VA A HACER myMap.remove()')
-        myMap.remove()
-        console.log('HA HECHO myMap.remove()')
-        myMap = L.map('myMap', options).setView([40.425941, -3.56547], 5)
-        Esri_WorldImagery.addTo(myMap)
-
         setTimeout(() => {
-          console.log('SET TIMEOUT')
           for (let i = 0; i < this.listType.length; i++) {
             this.pokemonService.getPokemon(this.listType[i]).subscribe(data => {
               var pokeMarker = L.icon({
