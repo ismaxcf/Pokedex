@@ -1,61 +1,35 @@
+
 <div class="list">
   <div class="main">
     <br />
 
     <div class="main--options">
-      <div class="main--options--title">
-        Pokedex
-      </div>
+      <div class="main--options--title"> Pokedex </div>
 
-      <div class="main--options--buttonBlock">
-        <div class="main--options--buttonBlock--titleButton">
-          Search by Type
-        </div>
-        <select
-          (change)="filterType($event.target.value)"
-          class="-main--options--buttonBlock-button"
-        >
-          <option value="0" class="-main--options--buttonBlock--button">
-            All
-          </option>
-          <option
-            *ngFor="let pokemons of pokemonsTypeFiltered"
-            value="{{ pokemons.type }}"
-            class="-main--options--buttonBlock--button"
-          >
-            {{ pokemons.type }}
-          </option>
-        </select>
-      </div>
-
-      <div class="main--options--buttonBlock">
-        <div class="main--options--buttonBlock--titleButton">Delete a Type</div>
-        <select (change)="removeType($event.target.value)">
-          <option class="-main--options--buttonBlock--button" value="0">
-            All
-          </option>
-          <option
-            *ngFor="let pokemons of pokemonsTypeFiltered"
-            value="{{ pokemons.type }}"
-            class="-main--options--buttonBlock--button"
-          >
-            {{ pokemons.type }}
-          </option>
-        </select>
-      </div>
-
-      <div class="main--options--buttonBlock">
-        <div class="main--options--buttonBlock--titleButton">
-          Search by Name
+      <div class="main--options--buttonBlock1">
+        <div class="main--options--buttonBlock1--titleButton">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+          width="40" height="40" 
+          viewBox="0 0 172 172"
+          style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M71.66667,14.33333c-31.57944,0 -57.33333,25.75389 -57.33333,57.33333c0,31.57944 25.75389,57.33333 57.33333,57.33333c14.50482,0 27.74719,-5.46789 37.86295,-14.40332l5.13705,5.13705v9.26628l28.66667,28.66667l14.33333,-14.33333l-28.66667,-28.66667h-9.26628l-5.13705,-5.13705c8.93544,-10.11576 14.40332,-23.35813 14.40332,-37.86295c0,-31.57944 -25.7539,-57.33333 -57.33333,-57.33333zM71.66667,28.66667c23.83313,0 43,19.16687 43,43c0,23.83313 -19.16687,43 -43,43c-23.83313,0 -43,-19.16687 -43,-43c0,-23.83313 19.16687,-43 43,-43zM50.16667,64.5c-3.95804,0 -7.16667,3.20863 -7.16667,7.16667c0,3.95804 3.20863,7.16667 7.16667,7.16667c3.95804,0 7.16667,-3.20863 7.16667,-7.16667c0,-3.95804 -3.20863,-7.16667 -7.16667,-7.16667zM71.66667,64.5c-3.95804,0 -7.16667,3.20863 -7.16667,7.16667c0,3.95804 3.20863,7.16667 7.16667,7.16667c3.95804,0 7.16667,-3.20863 7.16667,-7.16667c0,-3.95804 -3.20863,-7.16667 -7.16667,-7.16667zM93.16667,64.5c-3.95804,0 -7.16667,3.20863 -7.16667,7.16667c0,3.95804 3.20863,7.16667 7.16667,7.16667c3.95804,0 7.16667,-3.20863 7.16667,-7.16667c0,-3.95804 -3.20863,-7.16667 -7.16667,-7.16667z"></path></g></g></svg>Search 
         </div>
         <div class="form-group">
-          <input
-            type="text"
-            class="form-control"
-            placeholder=" Search by Name"
-            [(ngModel)]="searchTerm"
-          />
+          <input type="text" class="form-control" placeholder=" Introduce name here..." [(ngModel)]="searchTerm"/>
         </div>
+      </div>
+
+      <div class="main--options--buttonBlock2">
+
+        <select (change)="filterType($event.target.value)" class="button" >
+          <option value="0" > Types </option>
+          <option *ngFor="let pokemons of pokemonsTypeFiltered" value="{{ pokemons.type }}" > {{ pokemons.type }} </option>
+        </select>
+
+        <select (change)="removeType($event.target.value)" class="button">
+          <option value="0"> Delete </option>
+          <option *ngFor="let pokemons of pokemonsTypeFiltered" value="{{ pokemons.type }}"> {{ pokemons.type }} </option>
+        </select>
+
       </div>
     </div>
 
@@ -64,8 +38,7 @@
         *ngFor="let pokemon of pokemons | nameFilter: searchTerm"
         class="main--listBlock--item"
       >
-        <img
-          class="main--listBlock--item--logo"
+        <img class="main--listBlock--item--logo"
           src="https://www.nicepng.com/png/full/312-3126315_pokemon-pokmon-pokeball-pokball-pokemon-go-pokem-pokeball.png"
           width="40px"
           height="40px"
