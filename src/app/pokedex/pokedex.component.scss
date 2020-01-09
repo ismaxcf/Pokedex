@@ -36,3 +36,27 @@
     }
   }
 }
+
+@media screen and (max-width: 1029px) {
+  .pokedexContainer {
+    width: 100%;
+    height: 100%;
+    .listContainer {
+      width: 38%;
+    }
+    .MapAndDetailContainer {
+      display: flex;
+      width: 60%;
+      height: 90%;
+      margin-left: 0%;
+      .displayContainer {
+        width: 100%;
+      }
+      .map {
+        width: 100%;
+        height: 100%;
+        background-color: black;
+      }
+    }
+  }
+}
