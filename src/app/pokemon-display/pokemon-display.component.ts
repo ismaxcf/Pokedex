@@ -110,7 +110,6 @@ export class PokemonDisplayComponent implements OnInit {
   }
 
   Changeimg() {
-    //change test
     let result = this.pokemon['types'].map(x => x.type)
     result = result.map(x => x.name)
     if (result.indexOf('grass') !== -1) {

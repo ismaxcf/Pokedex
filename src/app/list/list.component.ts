@@ -28,15 +28,10 @@ export class ListComponent implements OnInit {
     this.pokemonsForMap = []
   }
   ngOnInit() {
-    //this.filterType('0')
     this.route.paramMap.subscribe((params: ParamMap) => {
       if (params.get('name')) this.selectedPokemon = params.get('name')
       if (params.get('type')) {
         this.type = params.get('type')
-        console.log(document.querySelectorAll('#filterType'))
-        // document.querySelectorAll('#filterType')[0]['options'].map((option)=>{
-        //   if(option['value']===this.type) console.log(option)
-        // })
         if (this.type === 'All' || !this.type) {
           this.PokemonService.getpokemonname().subscribe(data => {
             this.pokemons = data['results']
@@ -80,27 +75,6 @@ export class ListComponent implements OnInit {
     setTimeout(() => {
       window.location.reload()
     }, 100)
-    /*
-    console.log(this.pokemonsTypeFiltered)
-    console.log(filterVal)
-    if (filterVal == 'All') {
-      this.PokemonService.getpokemonname().subscribe(data => {
-        this.pokemons = data['results']
-      })
-      console.log(filterVal)
-      this.filterByType = false
-    } else {
-      console.log('something')
-      console.log(this.pokemonsTypeFiltered)
-      this.pokemons = this.pokemonsTypeFiltered.filter(
-        x => x['type'] == filterVal
-      )[0]['pokemons']
-      console.log(filterVal)
-      this.filterByType = true
-    }
-    console.log(this.pokemons)
-    this.type = filterVal
-   */
   }
 
   removeType(filterVal: any) {

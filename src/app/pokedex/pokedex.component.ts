@@ -19,16 +19,10 @@ export class PokedexComponent implements OnInit {
   }
 
   handlerPokemon(data) {
-    console.log('data:')
-    console.log(data)
     this.mapPokemonName = data
-    console.log('mapPokemonName:')
-    console.log(this.mapPokemonName)
   }
 
   typeChanged(event) {
-    //console.log('type changed')
-    console.log(event)
     this.listType = event
   }
 }
