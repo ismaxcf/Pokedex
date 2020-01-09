@@ -22,7 +22,7 @@ export class PokemonMapComponent implements OnInit {
       iconSize: [80, 90],
     })
   }
-  //  this.pokeMarker.options.iconUrl = data['sprites'].front_default
+
   ngOnInit() {
     let pokemonMap = this.createmap()
     this.route.paramMap.subscribe((params: ParamMap) => {
