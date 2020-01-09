@@ -12,11 +12,13 @@ import { TypeFilteredPipe } from './list/type-filter.pipe'
 import { PokemonMapComponent } from './pokemon-map/pokemon-map.component'
 import { HomeComponent } from './home/home.component'
 import { AboutUsComponent } from './about-us/about-us.component'
+import { ErrorpageComponent } from './errorpage/errorpage.component'
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'aboutUs', component: AboutUsComponent },
   { path: 'pokedex/:type', component: LandingpageComponent },
   { path: 'pokedex/:type/:name', component: LandingpageComponent },
+  { path: '**', component: ErrorpageComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ]
 
@@ -31,6 +33,7 @@ const appRoutes: Routes = [
     PokemonMapComponent,
     HomeComponent,
     AboutUsComponent,
+    ErrorpageComponent,
   ],
   imports: [
     BrowserModule,

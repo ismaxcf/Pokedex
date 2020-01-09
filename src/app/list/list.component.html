@@ -1,17 +1,17 @@
 <div class="main">
   <br />
-  <div class="main--options">
-    <div class="main--options--title">Pokedex</div>
+  <div class="options">
+    <div class="title">Pokedex</div>
 
-    <div class="main--options--buttonBlock1">
-      <div class="main--options--buttonBlock1--titleButton">
+    <div class="search">
+      <div class="search--text">
         <svg
-          class="icon"
+          class="searchIcon"
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
           y="0px"
-          width="40"
-          height="40"
+          width="20"
+          height="20"
           viewBox="0 0 172 172"
           style=" fill:#000000;"
         >
@@ -50,7 +50,7 @@
       </div>
     </div>
 
-    <div class="main--options--buttonBlock2">
+    <div class="buttons">
       <select (change)="filterType($event.target.value)" class="button">
         <option value="All"> All </option>
         <option
@@ -73,16 +73,16 @@
     </div>
   </div>
 
-  <div class="main--listBlock">
+  <div class="list">
     <div
       *ngFor="let pokemon of pokemons | nameFilter: searchTerm"
-      class="main--listBlock--item"
+      class="list--item"
     >
       <img
-        class="main--listBlock--item--logo"
+        class="pokeball-icon"
         src="https://www.nicepng.com/png/full/312-3126315_pokemon-pokmon-pokeball-pokball-pokemon-go-pokem-pokeball.png"
-        width="40px"
-        height="40px"
+        width="20px"
+        height="20px"
       />
       <div
         *ngIf="filterByType && type !== 'All'; else block"

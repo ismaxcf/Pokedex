@@ -11,14 +11,13 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border: 5px solid black;
   align-items: center;
   .logo-left {
     width: 10%;
     height: 50%;
     svg {
-      height: 90%;
-      width: 90%;
+      height: 100%;
+      width: 100%;
       object-fit: scale-down;
     }
   }
@@ -35,32 +34,25 @@ header {
     width: 38%;
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    font-size: 120px;
+    font-size: 60px;
     font-weight: 600;
     letter-spacing: 20px;
     margin: 0% 0% 0% 0%;
     color: white;
-    // text-shadow: 2px 2px 0 black, -2px 2px 0 black, 2px -2px 0 black,
-    //   -2px -2px 0 black, 0px 2px 0 black, 0px -2px 0 black, -2px 0px 0 black,
-    //   2px 0px 0 black, 3px 3px 0 black, -3px 3px 0 black, 3px -3px 0 black,
-    //   -3px -3px 0 black, 0px 3px 0 black, 0px -3px 0 black, -3px 0px 0 black,
-    //   3px 0px 0 black, 2px 3px 0 black, -2px 3px 0 black, 2px -3px 0 black,
-    //   -2px -3px 0 black, 3px 2px 0 black, -3px 2px 0 black, 3px -2px 0 black,
-    //   -3px -2px 0 black;
   }
   .logo-right {
     width: 10%;
     height: 50%;
     svg {
-      height: 90%;
-      width: 90%;
+      height: 100%;
+      width: 100%;
       object-fit: scale-down;
     }
   }
 }
 main {
-  // min-height: 80%;
-  // height: 100vh;
+  min-height: 80%;
+  height: auto;
   width: 100%;
   background-image: linear-gradient(
       to right bottom,
@@ -71,8 +63,8 @@ main {
 }
 
 footer {
-  font-family: calibri;
-  font-size: 30px;
+  font-family: 'Roboto';
+  font-size: 15px;
   height: 5%;
   width: 100%;
   background-color: gray;
@@ -90,67 +82,116 @@ footer {
   margin-right: 50px;
 }
 
-@media only screen and (max-width: 440px) {
+@media screen and (max-width: 1029px) {
+  body {
+    width: 100vw;
+    height: 100vh;
+  }
   header {
-    box-sizing: border-box;
-    height: 15%;
+    height: 10%;
     width: 100%;
-    background-color: black;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border: 5px solid black;
-    align-items: center;
     .logo-left {
-      width: 10%;
+      width: 15%;
       height: 50%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
       svg {
-        height: 90%;
-        width: 90%;
-        object-fit: scale-down;
+        height: 70%;
+        width: 70%;
       }
     }
     .title {
-      font-size: 20px;
-      font-weight: 600;
-      letter-spacing: 10px;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      height: 90%;
+      width: 90%;
+      font-size: 40px;
     }
     .logo-right {
-      width: 10%;
-      height: 50%;
-      svg {
-        height: 90%;
-        width: 90%;
-        object-fit: scale-down;
-      }
+      display: none;
     }
   }
   main {
+    height: 85%;
     width: 100%;
-    background-image: linear-gradient(
-        to right bottom,
-        rgba(255, 255, 255, 0.1),
-        rgba(255, 255, 255, 0.1)
-      ),
-      url(http://images.wikia.com/es.pokemon/images/6/67/Ruta_1.png);
   }
   footer {
-    font-family: calibri;
-    font-size: 11px;
+    font-size: 13px;
     height: 5%;
     width: 100%;
-    background-color: gray;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
     align-content: center;
-    color: white;
     .copyright {
       color: rgb(164, 197, 43);
     }
   }
-  .icon {
-    margin-right: 50px;
-  }
 }
+// @media only screen and (max-width: 440px) {
+//   header {
+//     box-sizing: border-box;
+//     height: 15%;
+//     width: 100%;
+//     background-color: black;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     border: 5px solid black;
+//     align-items: center;
+//     .logo-left {
+//       width: 10%;
+//       height: 50%;
+//       svg {
+//         height: 90%;
+//         width: 90%;
+//         object-fit: scale-down;
+//       }
+//     }
+//     .title {
+//       font-size: 20px;
+//       font-weight: 600;
+//       letter-spacing: 10px;
+//     }
+//     .logo-right {
+//       width: 10%;
+//       height: 50%;
+//       svg {
+//         height: 90%;
+//         width: 90%;
+//         object-fit: scale-down;
+//       }
+//     }
+//   }
+//   main {
+//     width: 100%;
+//     background-image: linear-gradient(
+//         to right bottom,
+//         rgba(255, 255, 255, 0.1),
+//         rgba(255, 255, 255, 0.1)
+//       ),
+//       url(http://images.wikia.com/es.pokemon/images/6/67/Ruta_1.png);
+//   }
+//   footer {
+//     font-family: calibri;
+//     font-size: 11px;
+//     height: 5%;
+//     width: 100%;
+//     background-color: gray;
+//     display: flex;
+//     flex-direction: row;
+//     align-items: center;
+//     justify-content: space-around;
+//     align-content: center;
+//     color: white;
+//     .copyright {
+//       color: rgb(164, 197, 43);
+//     }
+//   }
+//   .icon {
+//     margin-right: 50px;
+//   }
+// }

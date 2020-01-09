@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { AboutUsComponent } from './about-us.component'
+import { ErrorpageComponent } from './errorpage.component'
 
-describe('AboutUsComponent', () => {
-  let component: AboutUsComponent
-  let fixture: ComponentFixture<AboutUsComponent>
+describe('ErrorpageComponent', () => {
+  let component: ErrorpageComponent
+  let fixture: ComponentFixture<ErrorpageComponent>
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AboutUsComponent],
+      declarations: [ErrorpageComponent],
     }).compileComponents()
   }))
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AboutUsComponent)
+    fixture = TestBed.createComponent(ErrorpageComponent)
     component = fixture.componentInstance
     fixture.detectChanges()
   })
