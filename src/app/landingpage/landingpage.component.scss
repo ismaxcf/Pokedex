@@ -69,7 +69,7 @@ main {
     url(http://images.wikia.com/es.pokemon/images/6/67/Ruta_1.png);
 }
 footer {
-  font-family: calibri;
+  font-family: 'Roboto';
   font-size: 15px;
   height: 5%;
   width: 100%;
@@ -86,4 +86,54 @@ footer {
 }
 .icon {
   margin-right: 50px;
+}
+
+@media screen and (max-width: 1029px) {
+  body {
+    width: 100vw;
+    height: 100vh;
+  }
+  header {
+    height: 10%;
+    width: 100%;
+    .logo-left {
+      width: 15%;
+      height: 50%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      svg {
+        height: 70%;
+        width: 70%;
+      }
+    }
+    .title {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      height: 90%;
+      width: 90%;
+      font-size: 40px;
+    }
+    .logo-right {
+      display: none;
+    }
+  }
+  main {
+    height: 85%;
+    width: 100%;
+  }
+  footer {
+    font-size: 13px;
+    height: 5%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    align-content: center;
+    .copyright {
+      color: rgb(164, 197, 43);
+    }
+  }
 }
