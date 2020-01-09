@@ -2,7 +2,7 @@ header {
   text-align: center;
   font-weight: bold;
   font-size: xx-large;
-  font-family: "Cute Font", cursive;
+  font-family: 'Cute Font', cursive;
   background-color: tomato;
 }
 .main {
@@ -38,7 +38,7 @@ header {
       text-align: center;
       font-weight: bold;
       font-size: xx-large;
-      font-family: "Cute Font", cursive;
+      font-family: 'Cute Font', cursive;
       justify-content: center;
       align-items: center;
       background-color: silver;
@@ -55,7 +55,7 @@ header {
       height: 100%;
       align-self: center;
       width: 10%;
-      background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png");
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png');
 
       &:hover {
         .main--pokeballs--pokedex--description {
@@ -67,7 +67,7 @@ header {
         text-align: center;
         font-weight: bold;
         font-size: medium;
-        font-family: "Cute Font", cursive;
+        font-family: 'Cute Font', cursive;
         padding: 5px 0;
         display: none;
         color: black;
@@ -94,7 +94,7 @@ header {
 
       background-size: contain;
       background-repeat: no-repeat;
-      background-image: url("../../assets/circle-cropped.png");
+      background-image: url('../../assets/circle-cropped.png');
       height: 100%;
       align-self: center;
       width: 10%;
@@ -103,7 +103,7 @@ header {
         text-align: center;
         font-weight: bold;
         font-size: medium;
-        font-family: "Cute Font", cursive;
+        font-family: 'Cute Font', cursive;
         padding: 5px 0;
         display: none;
         color: black;
@@ -147,7 +147,7 @@ header {
         text-align: center;
         font-weight: bold;
         font-size: x-large;
-        font-family: "Cute Font", cursive;
+        font-family: 'Cute Font', cursive;
         justify-content: center;
         align-items: center;
         align-self: center;
@@ -167,7 +167,7 @@ header {
         align-self: center;
         width: 10%;
         // order: 2;
-        background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png");
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png');
 
         &--description {
           @keyframes description {
@@ -185,7 +185,7 @@ header {
           text-align: center;
           font-weight: bold;
           font-size: medium;
-          font-family: "Cute Font", cursive;
+          font-family: 'Cute Font', cursive;
           padding: 5px 0;
           color: black;
           position: absolute;
@@ -205,7 +205,7 @@ header {
       &--aboutUs {
         background-size: contain;
         background-repeat: no-repeat;
-        background-image: url("../../assets/circle-cropped.png");
+        background-image: url('../../assets/circle-cropped.png');
         height: 100%;
         order: 3;
         align-self: center;
@@ -227,7 +227,7 @@ header {
           text-align: center;
           font-weight: bold;
           font-size: medium;
-          font-family: "Cute Font", cursive;
+          font-family: 'Cute Font', cursive;
           padding: 5px 0;
           display: block;
           color: black;
@@ -273,7 +273,7 @@ header {
         text-align: center;
         font-weight: bold;
         font-size: x-large;
-        font-family: "Cute Font", cursive;
+        font-family: 'Cute Font', cursive;
         justify-content: center;
         align-items: center;
         align-self: center;
@@ -293,7 +293,7 @@ header {
         align-self: center;
         width: 10%;
         // order: 2;
-        background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png");
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png');
 
         &--description {
           @keyframes description {
@@ -311,7 +311,7 @@ header {
           text-align: center;
           font-weight: bold;
           font-size: medium;
-          font-family: "Cute Font", cursive;
+          font-family: 'Cute Font', cursive;
           padding: 5px 0;
           color: black;
           position: absolute;
@@ -331,7 +331,7 @@ header {
       &--aboutUs {
         background-size: contain;
         background-repeat: no-repeat;
-        background-image: url("../../assets/circle-cropped.png");
+        background-image: url('../../assets/circle-cropped.png');
         height: 100%;
         order: 3;
         align-self: center;
@@ -353,7 +353,7 @@ header {
           text-align: center;
           font-weight: bold;
           font-size: medium;
-          font-family: "Cute Font", cursive;
+          font-family: 'Cute Font', cursive;
           padding: 5px 0;
           display: block;
           color: black;

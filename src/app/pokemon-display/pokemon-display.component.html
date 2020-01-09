@@ -17,7 +17,7 @@
 
   <div class="PokemonContainer">
     <h2 class="PokemonContainer__Name">
-      <span>#{{ this.pokemon.id }} - </span>{{ this.pokemon.name }}
+      {{ this.pokemon.name }}
     </h2>
 
     <div class="PokemonPhotosContainer">
@@ -29,16 +29,16 @@
       />
       <ul class="PokemonPhotosContainer__Menu">
         <li class="PokemonPhotosContainer__Option" (click)="ChangeSex()">
-          F/M
+          Change gender
         </li>
         <li
           class="PokemonPhotosContainer__Option"
           (click)="ChangePerspective()"
         >
-          Change perspective
+          Change profile
         </li>
         <li class="PokemonPhotosContainer__Option" (click)="ChangeShiny()">
-          Shiny
+          Shine
         </li>
       </ul>
     </div>

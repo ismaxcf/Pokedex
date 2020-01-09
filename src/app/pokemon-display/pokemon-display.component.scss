@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 .pokemonDisplay {
-  font-size: 16px;
   animation: 2s ease-out 0s 1 loadBColor;
-  width: 90%;
-  height: 90%;
+  width: 75%;
+  height: 50%;
   background-image: url('https://i.imgur.com/OVO67Y5.png');
   background-color: rgba(208, 234, 233, 0.9);
   background-size: 0%;
@@ -13,7 +12,7 @@
   align-content: space-between;
   &__Close {
     animation: 2s ease-out 0s 1 growUp;
-    width: 3rem;
+    width: 1.5rem;
     position: absolute;
     left: 82%;
     top: 5%;
@@ -85,8 +84,8 @@
   flex-wrap: scroll;
   width: 100%;
   height: 80%;
-  margin: 4%;
-  letter-spacing: 10px;
+  margin: 2%;
+  letter-spacing: 5px;
   overflow: auto;
   &__Name {
     display: flex;
@@ -95,60 +94,60 @@
     border-radius: 10px;
     color: white;
     font-family: 'Roboto', sans-serif;
-    font-weight: 1000;
-    padding: 20px 30px;
+    font-weight: 600;
+    padding: 10px 15px;
     text-align: center;
     text-transform: uppercase;
-    font-size: 40px;
+    font-size: 18px;
     animation: 2s ease-out 0s 1 growUp;
-    margin-bottom: 1rem;
+    margin-top: 10px;
   }
 }
 .PokemonPhotosContainer {
-  width: 80%;
-  margin: 15px 0px 10px 160px;
+  width: 70%;
+  margin: 5px 0px 0px 20px;
   display: flex;
-  justify-content: center;
   align-content: center;
   align-items: center;
   letter-spacing: 1px;
   &__Sprite {
-    height: 200px;
+    width: 200px;
   }
   &__Menu {
-    width: 450px;
-    height: 80px;
+    width: 100%;
+    height: 40px;
     display: flex;
     flex-direction: row;
-    margin-left: 55px;
+    margin-left: 5px;
   }
   &__Option {
-    width: 140px;
+    width: 45px;
     height: auto;
+    font-weight: 200;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-family: 'Roboto', sans-serif;
     cursor: pointer;
-    padding: 0.3rem 0.7rem 0.3rem 0.7rem;
-    font-size: 20px;
+    padding: 5px 10px 5px 10px;
+    font-size: 12px;
     background-color: grey;
     color: white;
     border-radius: 8px;
-    margin-right: 20px;
+    margin-right: 5px;
     border: 0.5px solid white;
   }
 }
 .PokemonDataContainer {
-  margin-left: 65px;
+  margin-left: 27px;
   background-color: rgba(255, 250, 250, 0.8);
-  padding: 30px 30px 10px 10px;
+  padding: 15px 15px 5px 5px;
   border-radius: 10px;
 }
 .DetailsTitle {
-  font-family: Roboto;
-  font-size: 28px;
+  font-family: 'Roboto';
+  font-size: 14px;
   letter-spacing: 2px;
   font-weight: bold;
   display: flex;
@@ -156,18 +155,18 @@
   color: black;
 }
 .DetailsList {
-  width: 700px;
-  height: 200px;
-  font-family: Roboto;
+  width: 300px;
+  height: 90px;
+  font-family: 'Roboto';
   letter-spacing: 1px;
-  font-size: 26px;
-  padding: 10px 20px 10px 30px;
+  font-size: 13px;
+  padding: 5px 10px 5px 15px;
   overflow: auto;
   text-align: justify;
-  line-height: 35px;
+  line-height: 17px;
   font-weight: 400;
   &__Detail {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   &__Element {
     font-weight: none;
@@ -176,9 +175,10 @@
   }
 }
 .DetailsList::-webkit-scrollbar {
-  width: 20px;
+  width: 7px;
   background: lightgrey;
 }
+
 .DetailsList::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px lightgrey;
   border-radius: 10px;
