@@ -227,125 +227,125 @@
     background: lightgrey;
   }
 }
-// @media only screen and (max-width: 440px) {
-//   .main {
-//     background-color: white;
-//     background-size: cover;
-//     font-family: 'Roboto';
-//     border: 5px solid black;
-//     border-radius: 23px;
-//     box-sizing: content-box;
-//     height: 73vh;
-//     transform: translate(0%, 1%);
-//     font-size: 21px;
-//     cursor: pointer;
-//     &--options {
-//       // margin: 0% 5% 0% 6%;
-//       width: 100%;
-//       color: white;
-//       margin-bottom: 30px;
-//       &--title {
-//         margin-left: 5%;
-//         font-family: 'Roboto', sans-serif;
-//         height: 4px;
-//         width: 90%;
-//         font-size: 21px;
-//         background-color: black;
-//         border-radius: 10px;
-//         margin-bottom: 20px;
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//         padding: 15px 0px;
-//         letter-spacing: 2px;
-//       }
-//       &--buttonBlock1 {
-//         background-color: red;
-//         border-top-left-radius: 10px;
-//         border-top-right-radius: 10px;
-//         display: flex;
-//         justify-content: space-around;
-//         align-items: center;
-//         height: 20%;
-//         &--titleButton {
-//           font-size: 18px;
-//           letter-spacing: 1px;
-//           display: flex;
-//           align-items: center;
-//         }
-//       }
-//       &--buttonBlock2 {
-//         background-color: red;
-//         display: flex;
-//         justify-content: space-around;
-//         align-items: center;
-//         /* height: 20%; */
-//         /* width: 75%; */
-//         /* padding: 10px 50px 20px 50px; */
-//         margin-bottom: 10px;
-//         border-bottom-left-radius: 10px;
-//         border-bottom-right-radius: 10px;
-//       }
-//     }
-//     &--listBlock {
-//       box-sizing: content-box;
-//       border-radius: 10px;
-//       background-color: white;
-//       height: 56%;
-//       width: 90%;
-//       overflow: auto;
-//       margin: auto;
-//       margin-top: 10px;
-//       &--item {
-//         margin: 0px 0px 10px 0px;
-//         background-color: lightgrey;
-//         border-radius: 10px;
-//         display: flex;
-//         /* height: 42%; */
-//         align-items: center;
-//         text-transform: capitalize;
-//         letter-spacing: 1px;
-//         cursor: pointer;
-//         &--logo {
-//           margin: 0px 15px 0px 15px;
-//         }
-//       }
-//       &--selected {
-//         background-color: chartreuse;
-//       }
-//     }
-//   }
-//   .button {
-//     font-family: Roboto;
-//     letter-spacing: 1px;
-//     font-size: 16px;
-//     height: 30px;
-//     width: 79px;
-//     /* padding: 5px 0px 5px 45px; */
-//     border-radius: 8px;
-//     background-color: white;
-//     color: black;
+@media only screen and (max-width: 440px) {
+  .main {
+    background-color: white;
+    background-size: cover;
+    font-family: 'Roboto';
+    border: 5px solid black;
+    border-radius: 23px;
+    box-sizing: content-box;
+    height: 73vh;
+    transform: translate(0%, 1%);
+    font-size: 21px;
+    cursor: pointer;
+    &--options {
+      // margin: 0% 5% 0% 6%;
+      width: 100%;
+      color: white;
+      margin-bottom: 30px;
+      &--title {
+        margin-left: 5%;
+        font-family: 'Roboto', sans-serif;
+        height: 4px;
+        width: 90%;
+        font-size: 21px;
+        background-color: black;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 0px;
+        letter-spacing: 2px;
+      }
+      &--buttonBlock1 {
+        background-color: red;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 20%;
+        &--titleButton {
+          font-size: 18px;
+          letter-spacing: 1px;
+          display: flex;
+          align-items: center;
+        }
+      }
+      &--buttonBlock2 {
+        background-color: red;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        /* height: 20%; */
+        /* width: 75%; */
+        /* padding: 10px 50px 20px 50px; */
+        margin-bottom: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+    }
+    &--listBlock {
+      box-sizing: content-box;
+      border-radius: 10px;
+      background-color: white;
+      height: 56%;
+      width: 90%;
+      overflow: auto;
+      margin: auto;
+      margin-top: 10px;
+      &--item {
+        margin: 0px 0px 10px 0px;
+        background-color: lightgrey;
+        border-radius: 10px;
+        display: flex;
+        /* height: 42%; */
+        align-items: center;
+        text-transform: capitalize;
+        letter-spacing: 1px;
+        cursor: pointer;
+        &--logo {
+          margin: 0px 15px 0px 15px;
+        }
+      }
+      &--selected {
+        background-color: chartreuse;
+      }
+    }
+  }
+  .button {
+    font-family: Roboto;
+    letter-spacing: 1px;
+    font-size: 16px;
+    height: 30px;
+    width: 79px;
+    /* padding: 5px 0px 5px 45px; */
+    border-radius: 8px;
+    background-color: white;
+    color: black;
 
-//     .form-control {
-//       font-size: 14px;
-//     }
-//   }
-//   .main--listBlock::-webkit-scrollbar {
-//     width: 20px;
-//     background: lightgrey;
-//   }
-//   .main--listBlock::-webkit-scrollbar-track {
-//     box-shadow: inset 0 0 5px lightgrey;
-//     border-radius: 10px;
-//   }
-//   .main--listBlock::-webkit-scrollbar-thumb {
-//     background: grey;
-//     border-radius: 10px;
-//   }
-//   .main--listBlock::-webkit-scrollbar-thumb:hover {
-//     background: lightgrey;
-//   }
-//   .icon {
-//     margin-right: 10px;
-//   }
-// }
+    .form-control {
+      font-size: 14px;
+    }
+  }
+  .main--listBlock::-webkit-scrollbar {
+    width: 20px;
+    background: lightgrey;
+  }
+  .main--listBlock::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px lightgrey;
+    border-radius: 10px;
+  }
+  .main--listBlock::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 10px;
+  }
+  .main--listBlock::-webkit-scrollbar-thumb:hover {
+    background: lightgrey;
+  }
+  .icon {
+    margin-right: 10px;
+  }
+}
