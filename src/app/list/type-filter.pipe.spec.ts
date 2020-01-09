@@ -1,15 +1,40 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing'
-import { ListComponent } from './list.component'
 import { TypeFilteredPipe } from './type-filter.pipe'
-import { NgModel, FormsModule } from '@angular/forms'
-import { NgModule } from '@angular/core'
-import { RouterLink } from '@angular/router'
-import { HttpClient, HttpClientModule } from '@angular/common/http'
 
-describe('ListComponent', () => {
-  let component: ListComponent
-  let fixture: ComponentFixture<ListComponent>
-  let typeFilteredPipe: TypeFilteredPipe
+describe('Pipe: Default', () => {
+  let pipe: TypeFilteredPipe
+  let listaPokemonStr: Array<string> = [
+    'bulbasaur',
+    'pikachu',
+    'charmander',
+    'squirtle',
+    'rattata',
+    'pidgey',
+    'ditto',
+    'mew',
+    'mewtwo',
+    'abra',
+    'zapdos',
+    'arcanine',
+    'moltres',
+    'Growlithe',
+    'jynx',
+    'ivysaur',
+    'totodile',
+    'chikorita',
+    'raticate',
+    'porygon',
+    'articuno',
+    'pidgeot',
+    'kadabra',
+    'charizard',
+    'venasaur',
+    'weedle',
+    'ekans',
+    'Caterpie',
+    'Arbok',
+    'spearow',
+  ]
+
   let listaPokemonObj: Array<object> = [
     {
       name: 'bulbasaur',
@@ -413,59 +438,37 @@ describe('ListComponent', () => {
     },
   ]
 
-  let listaPokemonStr: Array<string> = [
-    'bulbasaur',
-    'pikachu',
-    'charmander',
-    'squirtle',
-    'rattata',
-    'pidgey',
-    'ditto',
-    'mew',
-    'mewtwo',
-    'abra',
-    'zapdos',
-    'arcanine',
-    'moltres',
-    'Growlithe',
-    'jynx',
-    'ivysaur',
-    'totodile',
-    'chikorita',
-    'raticate',
-    'porygon',
-    'articuno',
-    'pidgeot',
-    'kadabra',
-    'charizard',
-    'venasaur',
-    'weedle',
-    'ekans',
-    'Caterpie',
-    'Arbok',
-    'spearow',
-  ]
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        ListComponent,
-        NgModel,
-        TypeFilteredPipe,
-        RouterLink,
-        HttpClientModule,
-      ],
-    }).compileComponents()
-  }))
-
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListComponent)
-    component = fixture.componentInstance
-    typeFilteredPipe = new TypeFilteredPipe()
-    fixture.detectChanges()
+    pipe = new TypeFilteredPipe()
   })
 
-  /* it('should create', () => {
-    expect(component).toBeTruthy()
-  }) */
+  it('should return pokemons starting with a', () => {
+    expect(pipe.transform(listaPokemonStr, 'a')).toEqual([
+      'abra',
+      'arcanine',
+      'articuno',
+      'Arbok',
+    ])
+  })
+
+  it('should return all pokemon', () => {
+    expect(pipe.transform(listaPokemonStr, '')).toEqual(listaPokemonStr)
+  })
+
+  it('should return pokemon object Pikachu', () => {
+    expect(pipe.transform(listaPokemonObj, 'pikachu')).toEqual([
+      {
+        name: 'pikachu',
+        url: 'https://pokeapi.co/api/v2/pokemon/25/',
+      },
+    ])
+  })
+
+  it('should return empty list', () => {
+    expect(pipe.transform(listaPokemonStr, 'random')).toEqual([])
+  })
+
+  it('should return empty list', () => {
+    expect(pipe.transform(listaPokemonObj, 'random')).toEqual([])
+  })
 })
