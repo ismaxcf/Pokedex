@@ -6,9 +6,9 @@ import { ActivatedRoute, ParamMap } from '@angular/router'
   styleUrls: ['./pokedex.component.scss'],
 })
 export class PokedexComponent implements OnInit {
-  mapPokemonName: string
-  mapPokemonType: string
-  listType: Array<string>
+  private mapPokemonName: string
+  private mapPokemonType: string
+  private listType: Array<string>
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {

@@ -10,11 +10,11 @@ import { ActivatedRoute, ParamMap } from '@angular/router'
 export class PokemonDisplayComponent implements OnInit {
   @Output() emitter = new EventEmitter<string>()
 
-  pokemonName: string
-  pokemon: Object
-  photo: Object
-  female: boolean
-  changeable: boolean = true
+  private pokemonName: string
+  private pokemon: Object
+  private photo: Object
+  private female: boolean
+  private changeable: boolean = true
   constructor(
     private pokemonService: PokemonService,
     private route: ActivatedRoute

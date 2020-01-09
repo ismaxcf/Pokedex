@@ -10,8 +10,8 @@ import { ActivatedRoute, ParamMap } from '@angular/router'
 })
 export class PokemonMapComponent implements OnInit {
   @Input() listType: Array<string>
-  name: string
-  type: string
+  private name: string
+  private type: string
 
   constructor(
     private pokemonService: PokemonService,

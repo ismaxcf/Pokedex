@@ -9,13 +9,13 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router'
 })
 export class ListComponent implements OnInit {
   @Output() listEmitter = new EventEmitter<any>()
-  pokemons: Array<Object>
-  pokemonTypes: Array<Object>
-  pokemonsTypeFiltered: Array<Object>
-  filterByType: boolean
-  selectedPokemon: string
-  type: string
-  pokemonsForMap: Array<string>
+  private pokemons: Array<Object>
+  private pokemonTypes: Array<Object>
+  private pokemonsTypeFiltered: Array<Object>
+  private filterByType: boolean
+  private selectedPokemon: string
+  private type: string
+  private pokemonsForMap: Array<string>
   constructor(
     private PokemonService: PokemonService,
     private route: ActivatedRoute,
