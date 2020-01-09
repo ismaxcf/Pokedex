@@ -1,12 +1,23 @@
-import { TestBed } from "@angular/core/testing";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing'
+import { PokemonService } from './pokemon.service'
 
-import { PokemonService } from "./pokemon.service";
+describe('PokemonService', () => {
+  let component: PokemonService
+  let fixture: ComponentFixture<PokemonService>
 
-describe("PokemonService", () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [PokemonService],
+    }).compileComponents()
+  }))
 
-  it("should be created", () => {
-    const service: PokemonService = TestBed.get(PokemonService);
-    expect(service).toBeTruthy();
-  });
-});
+  beforeEach(() => {
+    fixture = TestBed.createComponent(PokemonService)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
+
+  /* it('should create', () => {
+    expect(component).toBeTruthy()
+  }) */
+})
