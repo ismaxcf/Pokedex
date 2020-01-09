@@ -32,7 +32,7 @@ export class PokemonDisplayComponent implements OnInit {
         this.pokemon = data
         this.pokemonphoto['link'] = this.pokemon['sprites'].front_default
         this.pokemonphoto['name'] = 'front_default'
-
+        this.changeable = true
         this.emitter.emit(this.pokemonName)
 
         this.pokemonService
@@ -47,7 +47,7 @@ export class PokemonDisplayComponent implements OnInit {
     })
   }
 
-  ChangeSex() {
+  ChangeSex(): void {
     if (this.changeable) {
       if (this.pokemonphoto['name'].split('_')[1] === 'default') {
         if (
@@ -75,7 +75,7 @@ export class PokemonDisplayComponent implements OnInit {
     }
   }
 
-  ChangePerspective() {
+  ChangePerspective(): void {
     if (this.changeable) {
       if (this.pokemonphoto['name'].split('_')[0] === 'front') {
         this.pokemonphoto['name'] = 'back_'.concat(
@@ -95,7 +95,7 @@ export class PokemonDisplayComponent implements OnInit {
     }
   }
 
-  ChangeShiny() {
+  ChangeShiny(): void {
     if (this.changeable) {
       let nameArray = this.pokemonphoto['name'].split('_')
       if (nameArray[1] === 'female') {
@@ -119,7 +119,7 @@ export class PokemonDisplayComponent implements OnInit {
     }
   }
 
-  CloseDisplay() {
+  CloseDisplay(): void {
     if (confirm('Cerrar detalle del pokemon?')) {
       this.pokemon = undefined
       this.pokemonphoto = undefined
@@ -129,7 +129,7 @@ export class PokemonDisplayComponent implements OnInit {
     }
   }
 
-  Changeimg() {
+  Changeimg(): void {
     let result = this.pokemon['types'].map(x => x.type)
     result = result.map(x => x.name)
     if (result.indexOf('grass') !== -1) {

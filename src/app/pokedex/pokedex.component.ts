@@ -18,11 +18,11 @@ export class PokedexComponent implements OnInit {
     })
   }
 
-  handlerPokemon(data) {
+  handlerPokemon(data): void {
     this.mapPokemonName = data
   }
 
-  typeChanged(event) {
+  typeChanged(event): void {
     this.listType = event
   }
 }

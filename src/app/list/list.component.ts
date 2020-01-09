@@ -70,14 +70,14 @@ export class ListComponent implements OnInit {
     })
   }
 
-  filterType(filterVal: any) {
+  filterType(filterVal: any): void {
     this.router.navigateByUrl('/pokedex/' + filterVal)
     setTimeout(() => {
       window.location.reload()
     }, 100)
   }
 
-  removeType(filterVal: any) {
+  removeType(filterVal: any): void {
     let aux = this.pokemonsTypeFiltered.filter(x => x['type'] == filterVal)[0][
       'pokemons'
     ]

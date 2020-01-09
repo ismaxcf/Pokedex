@@ -22,7 +22,7 @@ export class PokemonMapComponent implements OnInit {
       iconSize: [80, 90],
     })
   }
-
+  //  this.pokeMarker.options.iconUrl = data['sprites'].front_default
   ngOnInit() {
     let pokemonMap = this.createmap()
     this.route.paramMap.subscribe((params: ParamMap) => {
@@ -54,7 +54,7 @@ export class PokemonMapComponent implements OnInit {
     })
   }
 
-  getRandomLatLng(map) {
+  getRandomLatLng(map): L.LatLng {
     var bounds = map.getBounds(),
       southWest = bounds.getSouthWest(),
       northEast = bounds.getNorthEast(),
@@ -66,14 +66,14 @@ export class PokemonMapComponent implements OnInit {
     )
   }
 
-  createmap() {
+  createmap(): any {
     let options = {
       attributionControl: false,
       minZoom: 0.5,
       maxBoundsViscosity: 0.8,
     }
     let pokemap = L.map('myMap', options).setView([40.425941, -3.56547], 0.8)
-    var Esri_WorldImagery = L.tileLayer(
+    let Esri_WorldImagery = L.tileLayer(
       'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
       {
         attribution:
