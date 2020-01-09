@@ -18,8 +18,8 @@ const appRoutes: Routes = [
   { path: 'aboutUs', component: AboutUsComponent },
   { path: 'pokedex/:type', component: LandingpageComponent },
   { path: 'pokedex/:type/:name', component: LandingpageComponent },
-  { path: '**', component: ErrorpageComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', component: ErrorpageComponent },
 ]
 
 @NgModule({

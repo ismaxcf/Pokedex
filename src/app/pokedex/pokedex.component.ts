@@ -6,9 +6,9 @@ import { ActivatedRoute, ParamMap } from '@angular/router'
   styleUrls: ['./pokedex.component.scss'],
 })
 export class PokedexComponent implements OnInit {
-  mapPokemonName: string
-  mapPokemonType: string
-  listType: Array<string>
+  private mapPokemonName: string
+  private mapPokemonType: string
+  private listType: Array<string>
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
@@ -18,17 +18,11 @@ export class PokedexComponent implements OnInit {
     })
   }
 
-  handlerPokemon(data) {
-    console.log('data:')
-    console.log(data)
+  handlerPokemon(data): void {
     this.mapPokemonName = data
-    console.log('mapPokemonName:')
-    console.log(this.mapPokemonName)
   }
 
-  typeChanged(event) {
-    //console.log('type changed')
-    console.log(event)
+  typeChanged(event): void {
     this.listType = event
   }
 }
