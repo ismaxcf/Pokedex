@@ -12,14 +12,14 @@ export class PokemonDisplayComponent implements OnInit {
 
   private pokemonName: string
   private pokemon: Object
-  private photo: Object
+  private pokemonphoto: Object
   private female: boolean
   private changeable: boolean = true
   constructor(
     private pokemonService: PokemonService,
     private route: ActivatedRoute
   ) {
-    this.photo = {
+    this.pokemonphoto = {
       link: '',
       name: '',
     }
@@ -30,8 +30,8 @@ export class PokemonDisplayComponent implements OnInit {
       this.pokemonName = params.get('name')
       this.pokemonService.getPokemon(this.pokemonName).subscribe(data => {
         this.pokemon = data
-        this.photo['link'] = this.pokemon['sprites'].front_default
-        this.photo['name'] = 'front_default'
+        this.pokemonphoto['link'] = this.pokemon['sprites'].front_default
+        this.pokemonphoto['name'] = 'front_default'
 
         this.emitter.emit(this.pokemonName)
 
@@ -49,51 +49,71 @@ export class PokemonDisplayComponent implements OnInit {
 
   ChangeSex() {
     if (this.changeable) {
-      if (this.photo['name'].split('_')[1] === 'default') {
+      if (this.pokemonphoto['name'].split('_')[1] === 'default') {
         if (
           this.pokemon['sprites'][
-            this.photo['name'].split('_')[0].concat('_female')
+            this.pokemonphoto['name'].split('_')[0].concat('_female')
           ]
         ) {
-          this.photo['name'] = this.photo['name']
+          this.pokemonphoto['name'] = this.pokemonphoto['name']
             .split('_')[0]
             .concat('_female')
-          this.photo['link'] = this.pokemon['sprites'][this.photo['name']]
+          this.pokemonphoto['link'] = this.pokemon['sprites'][
+            this.pokemonphoto['name']
+          ]
         } else {
           alert('Photo not found')
         }
       } else {
-        this.photo['name'] = this.photo['name'].split('_')[0].concat('_default')
-        this.photo['link'] = this.pokemon['sprites'][this.photo['name']]
+        this.pokemonphoto['name'] = this.pokemonphoto['name']
+          .split('_')[0]
+          .concat('_default')
+        this.pokemonphoto['link'] = this.pokemon['sprites'][
+          this.pokemonphoto['name']
+        ]
       }
     }
   }
 
   ChangePerspective() {
     if (this.changeable) {
-      if (this.photo['name'].split('_')[0] === 'front') {
-        this.photo['name'] = 'back_'.concat(this.photo['name'].split('_')[1])
-        this.photo['link'] = this.pokemon['sprites'][this.photo['name']]
+      if (this.pokemonphoto['name'].split('_')[0] === 'front') {
+        this.pokemonphoto['name'] = 'back_'.concat(
+          this.pokemonphoto['name'].split('_')[1]
+        )
+        this.pokemonphoto['link'] = this.pokemon['sprites'][
+          this.pokemonphoto['name']
+        ]
       } else {
-        this.photo['name'] = 'front_'.concat(this.photo['name'].split('_')[1])
-        this.photo['link'] = this.pokemon['sprites'][this.photo['name']]
+        this.pokemonphoto['name'] = 'front_'.concat(
+          this.pokemonphoto['name'].split('_')[1]
+        )
+        this.pokemonphoto['link'] = this.pokemon['sprites'][
+          this.pokemonphoto['name']
+        ]
       }
     }
   }
 
   ChangeShiny() {
     if (this.changeable) {
-      let nameArray = this.photo['name'].split('_')
+      let nameArray = this.pokemonphoto['name'].split('_')
       if (nameArray[1] === 'female') {
-        this.photo['name'] = nameArray[0] + '_shiny_' + nameArray[1]
-        this.photo['link'] = this.pokemon['sprites'][this.photo['name']]
+        this.pokemonphoto['name'] = nameArray[0] + '_shiny_' + nameArray[1]
+        this.pokemonphoto['link'] = this.pokemon['sprites'][
+          this.pokemonphoto['name']
+        ]
       } else {
         if (nameArray[1] === 'shiny') {
-          this.photo['name'] = nameArray[0] + '_default'
-          this.photo['link'] = this.pokemon['sprites'][this.photo['name']]
+          this.pokemonphoto['name'] = nameArray[0] + '_default'
+          this.pokemonphoto['link'] = this.pokemon['sprites'][
+            this.pokemonphoto['name']
+          ]
         } else {
-          this.photo['name'] = nameArray[0] + '_shiny'
-          this.photo['link'] = this.pokemon['sprites'][this.photo['name']]
+          this.pokemonphoto['name'] = nameArray[0] + '_shiny'
+          this.pokemonphoto['link'] = this.pokemon['sprites'][
+            this.pokemonphoto['name']
+          ]
         }
       }
     }
@@ -102,9 +122,9 @@ export class PokemonDisplayComponent implements OnInit {
   CloseDisplay() {
     if (confirm('Cerrar detalle del pokemon?')) {
       this.pokemon = undefined
-      this.photo = undefined
+      this.pokemonphoto = undefined
       this.pokemonName = undefined
-      this.photo = { link: '', name: '' }
+      this.pokemonphoto = { link: '', name: '' }
       this.female = false
     }
   }
@@ -114,12 +134,12 @@ export class PokemonDisplayComponent implements OnInit {
     result = result.map(x => x.name)
     if (result.indexOf('grass') !== -1) {
       if (this.changeable) {
-        this.photo['last'] = this.photo['link']
-        this.photo['link'] =
+        this.pokemonphoto['last'] = this.pokemonphoto['link']
+        this.pokemonphoto['link'] =
           'https://vignette.wikia.nocookie.net/plantsvszombies/images/c/c6/Lanzagisantes.png/revision/latest?cb=20150324214507&path-prefix=es'
         this.changeable = false
       } else {
-        this.photo['link'] = this.photo['last']
+        this.pokemonphoto['link'] = this.pokemonphoto['last']
         this.changeable = true
       }
     }

@@ -76,7 +76,7 @@
 
   <div class="main--listBlock">
     <div
-      *ngFor="let pokemon of pokemons | nameFilter: searchTerm"
+      *ngFor="let pokemon of pokemonList | nameFilter: searchTerm"
       class="main--listBlock--item"
     >
       <img
@@ -86,13 +86,13 @@
         height="20px"
       />
       <div
-        *ngIf="filterByType && type !== 'All'; else block"
-        routerLink="/pokedex/{{ type }}/{{ pokemon }}"
+        *ngIf="filterByType && selectedtype !== 'All'; else block"
+        routerLink="/pokedex/{{ selectedtype }}/{{ pokemon }}"
       >
         {{ pokemon }}
       </div>
       <ng-template #block
-        ><span routerLink="/pokedex/{{ type }}/{{ pokemon.name }}"
+        ><span routerLink="/pokedex/{{ selectedtype }}/{{ pokemon.name }}"
           >{{ pokemon.name }}
         </span>
       </ng-template>
